@@ -32,6 +32,15 @@ class DeviseCreatePublics < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      # デフォルト以外に新規登録の際に必要な情報を追加
+      t.string :last_name, null: false
+      t.string :first_name, null: false
+      t.string :last_name_kana, null: false
+      t.string :first_name_kana, null: false
+      t.string :postcode, null: false
+      t.string :address, null: false
+      t.string :tel, null: false
+      t.boolean :is_deleted, null: false, default: false
 
       t.timestamps null: false
     end
