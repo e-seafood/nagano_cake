@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-	has_many :genres
+	belongs_to :genre
 
-	belongs_to :order_item
-	belongs_to :cart
+	has_many :order_items
+	has_many :carts

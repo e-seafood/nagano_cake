@@ -1,4 +1,4 @@
 class Cart < ApplicationRecord
-	has_many :publics
-	has_many :items
+	belongs_to :publics
+	belongs_to :items
 end
