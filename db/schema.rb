@@ -10,7 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_075114) do
+ActiveRecord::Schema.define(version: 2020_10_01_040540) do
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "public_id", null: false
+    t.integer "item_id", null: false
+    t.integer "item_count", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "is_active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.string "name", null: false
+    t.text "explanation", null: false
+    t.integer "non_taxed_price", null: false
+    t.string "image_id", null: false
+    t.boolean "is_active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "order_id", null: false
+    t.integer "item_count", null: false
+    t.integer "making_status", default: 0, null: false
+    t.integer "tax_included_price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "public_id", null: false
+    t.integer "status", default: 0, null: false
+    t.string "postcode", null: false
+    t.string "address", null: false
+    t.string "name", null: false
+    t.integer "payment", default: 0, null: false
+    t.integer "postage", null: false
+    t.integer "amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "publics", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +71,15 @@ ActiveRecord::Schema.define(version: 2020_09_30_075114) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_publics_on_email", unique: true
     t.index ["reset_password_token"], name: "index_publics_on_reset_password_token", unique: true
+  end
+
+  create_table "shippings", force: :cascade do |t|
+    t.integer "public_id", null: false
+    t.string "postcode", null: false
+    t.string "address", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
