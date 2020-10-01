@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :publics
+
 
   root 'publics/homes#top'
   get '/about' => "publics/homes#about"
@@ -25,5 +27,4 @@ Rails.application.routes.draw do
     end
 
   end
-
 
