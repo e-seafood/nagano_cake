@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
-	has_many :publics
+	belongs_to :public
 
-	belongs_to :order_item
+	has_many :order_items
 
 	enum status:[0,1,2,3,4]
 	enum payment:[0,1]

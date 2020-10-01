@@ -4,8 +4,8 @@ class Public < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :cart
-  belongs_to :order
-  belongs_to :shipping
+  has_many :carts
+  has_many :orders
+  has_many :shippings
 
 end

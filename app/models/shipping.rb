@@ -1,3 +1,3 @@
 class Shipping < ApplicationRecord
-	has_many :publics
+	belongs_to :public
 end
