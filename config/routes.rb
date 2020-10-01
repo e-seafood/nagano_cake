@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :publics
 
-  root 'homes#top'
-  get '/homes/about' => "homes#about"
+  root 'publics/homes#top'
+  get '/about' => "publics/homes#about"
 
   scope module: :publics do
     resources :items,only: [:index,:show]
