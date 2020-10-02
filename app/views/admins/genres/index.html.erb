@@ -1,8 +1,9 @@
 <h1>ジャンル一覧・追加</h1>
 
 <%= form_for(@genre, url: admins_genres_path) do |f| %>
-  <label>ジャンル</label>
+  <%= f.label :genre, "ジャンル" %>
   	<%= f.text_field :name %>
+<!-- ラジオボタン -->
     <%= f.radio_button :is_active, :ture,{:checked => true} %>
     <%= f.label 0,"有効" %>
     <%= f.radio_button :is_active, :false %>
