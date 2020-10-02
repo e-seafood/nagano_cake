@@ -3,9 +3,9 @@
 <%= form_for(@genre, url: admins_genres_path) do |f| %>
   <label>ジャンル</label>
   	<%= f.text_field :name %>
-    <%= f.radio_button :is_active, 1,{:checked => true} %>
+    <%= f.radio_button :is_active, :ture,{:checked => true} %>
     <%= f.label 0,"有効" %>
-    <%= f.radio_button :is_active, 0 %>
+    <%= f.radio_button :is_active, :false %>
     <%= f.label 1,"無効" %>
   <%= f.submit "追加" %>
 <% end %>
