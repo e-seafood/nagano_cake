@@ -2,11 +2,11 @@
 <table>
   <thead>
     <tr>
-      <td>商品ID</td>
-      <td>商品名</td>
-      <td>税抜価格</td>
-      <td>ジャンル</td>
-      <td>ステータス</td>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <th>ステータス</th>
     </tr>
   </thead>
   <tbody>
@@ -22,9 +22,9 @@
         <td><%= item.genre.name %></td>
         <td>
           <% if item.is_active == true %>
-            <p>販売中</p>
+            販売中
           <% else %>
-            <p>売切れ</p>
+            売切れ
           <% end %>
         </td>
       </tr>
