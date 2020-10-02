@@ -2,9 +2,9 @@
   <%= f.label :genre, "ジャンル" %>
     <%= f.text_field :name %>
     <%= f.radio_button :is_active, :true,{:checked => true} %>
-    <%= f.label 0,"有効" %>
+    <%= f.label :true,"有効" %>
     <%= f.radio_button :is_active, :false %>
-    <%= f.label 1,"無効" %>
+    <%= f.label :false,"無効" %>
   <%= f.submit "追加" %>
 <% end %>
 
