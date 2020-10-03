@@ -1,5 +1,5 @@
 <h1>
-  <%= @publiclast_namefirst_name %>
+  <%= @public.last_name %>
   <%= @public.first_name %>
   さんの会員詳細
 </h1>
@@ -23,7 +23,7 @@
   </tr>
   <tr>
     <td>フリガナ</td>
-    <td><%= @public.first_name_kana %> <%= @public.last_name_kana %></td>
+    <td><%= @public.last_name_kana %> <%= @public.first_name_kana %></td>
   </tr>
   <tr>
     <td>郵便番号</td>
