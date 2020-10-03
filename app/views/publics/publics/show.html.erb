@@ -1,17 +1,17 @@
 	<h2>マイページ</h2>
 	<h3>登録情報</h3>
-			<%= link_to " 編集する", public_edit_path, class: "" %>
-			<%= link_to " パスワードを変更する", edit_public_registration_path, class: "" %>
+			<%= link_to " 編集する", edit_publics_path, class: "" %>
+			<%= link_to " パスワードを変更する", edit_public_password_path, class: "" %>
 
 			<table class="table" >
 				<tbody>
 					<tr>
 						<td>氏名</td>
-						<td><%= full_name(@public) %></td>
+						<td><%#= name(@public) %></td>
 					</tr>
 					<tr>
 						<td>カナ</td>
-						<td><%= kana_full_name(@public) %></td>
+						<td><%#= kana_name(@public) %></td>
 					</tr>
 					<tr>
 						<td>郵便番号</td>
@@ -34,7 +34,7 @@
 
 			<div class="">
 				<h3>配送先</h3>
-					<%= link_to " 一覧を見る", publics_shipping_addresses_path, data: {"turbolinks" => false}%>
+					<%= link_to " 一覧を見る", shippings_path, class:"" %>
 				<h3>注文履歴</h3>
-					<%= link_to " 一覧を見る", publics_orders_path, class: ""%>
+					<%= link_to " 一覧を見る", orders_path, class: ""%>
 			</div>
