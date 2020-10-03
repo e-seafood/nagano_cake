@@ -6,35 +6,41 @@
 
 <table>
   <tr>
-  	<td>顧客ID</td>
-  	<td>
-  		<%= @public.id %>
-  		<% if public.is_deleted == false %>
-  	  	  有効会員
-  	  	<% else %>
-  	  	  退会済み会員
-  	  	<% end %>
-  	</td>
+    <td>顧客ID</td>
+    <td>
+      <%= @public.id %>
+      <% if @public.is_deleted == false %>
+          有効会員
+        <% else %>
+          退会済み会員
+        <% end %>
+    </td>
   </tr>
   <tr>
-  	<td>氏名</td>
-  	<td><%= @public.first_name %> <%= @public.last_name %></td>
+    <td>氏名</td>
+    <td><%= @public.first_name %> <%= @public.last_name %></td>
   </tr>
   <tr>
-  	<td>フリガナ</td>
-  	<td><%= @public.first_name_kana %> <%= @public.last_name_kana %></td>
+    <td>フリガナ</td>
+    <td><%= @public.first_name_kana %> <%= @public.last_name_kana %></td>
   </tr>
   <tr>
-  	<td>郵便番号</td>
-  	<td><%= @public.postcode %></td>
+    <td>郵便番号</td>
+    <td><%= @public.postcode %></td>
   </tr>
   <tr>
-  	<td>住所</td>
-  	<td><%= @public.adress %></td>
+    <td>住所</td>
+    <td><%= @public.address %></td>
   </tr>
   <tr>
-  	<td>電話番号</td>
-  	<td><%= @public.tel %></td>
+    <td>電話番号</td>
+    <td><%= @public.tel %></td>
   </tr>
   <tr>
-  	<td>メ
+    <td>メールアドレス</td>
+    <td><%= @public.email %></td>
+  </tr>
+</table>
+
+<%= link_to "編集する", edit_admins_public_path(@public) %>
+<%= link_to "注文履歴一覧を見る",admins_orders_path(@public) %>

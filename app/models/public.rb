@@ -9,8 +9,8 @@ class Public < ApplicationRecord
   has_many :shippings
 
   #会員ステータスが退会済みならtrueを返すメゾット、退会済みユーザーのログインを弾く際に使用します。
-  def active_for_authetication?
-  	super && (self.id_deleted == false)
+  def active_for_authentication?
+  	super && (self.is_deleted === false)
   end
 
 end
