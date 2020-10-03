@@ -1,13 +1,13 @@
 <h1>
-  <%= @public.first_name %>
   <%= @public.last_name %>
+  <%= @public.first_name %>
   さんの会員情報編集
 </h1>
 
 <table>
   <%= form_for(@public, url:admins_public_path(@public)) do |f| %>
     <tr>
-    	<td>顧客ID</td>
+    	<td>会員ID</td>
         <td><%= @public.id %></td>
     </tr>
     <tr>
