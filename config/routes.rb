@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :admins
-  devise_for :publics
-
+  devise_for :publics, :controllers => {
+    :registrations => 'publics/registrations',
+    :sessions => 'publics/sessions',
+    :passwords => 'publics/passwords'
+  }
 
   root 'publics/homes#top'
   get '/about' => "publics/homes#about"
