@@ -10,6 +10,8 @@
   </head>
 
   <body>
+  <%= link_to "ログアウト", destroy_public_session_path, method: :delete %>
+  <%= link_to "マイページ", publics_path %>
     <%= yield %>
   </body>
 </html>

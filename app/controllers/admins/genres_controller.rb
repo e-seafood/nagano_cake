@@ -1,4 +1,5 @@
 class Admins::GenresController < ApplicationController
+
 	def index
 		@genres = Genre.all
 		@genre = Genre.new
@@ -7,7 +8,7 @@ class Admins::GenresController < ApplicationController
 	def create
 		@genre = Genre.new(genre_params)
 		if 	@genre.save
-		   	redirect_to request.referer
+			redirect_to request.referer
 		else
 			render "index"
 			flash[:notice] = "登録できませんでした"
