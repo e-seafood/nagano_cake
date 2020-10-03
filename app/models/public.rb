@@ -4,9 +4,9 @@ class Public < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :carts, through: :items
   has_many :orders
   has_many :shippings
+  has_many :carts, through: :carts
 
 end
 
