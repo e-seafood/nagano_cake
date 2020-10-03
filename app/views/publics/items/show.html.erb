@@ -5,9 +5,8 @@
   <h3><%= @item.name %></h3>
   <p><%= @item.explanation %></p>
 </div>
-<!--現在、税抜価格。税込価格を入れる方法がわかったら変更-->
 <div>
-  ¥<%= @item.non_taxed_price %>（税込）
+  ¥<%= tax(@item.non_taxed_price) %>（税込）
   <%= form_for(@cart, url: carts_path) do |f| %>
     <%= f.hidden_field :public_id, :value => @public.id %>
     <%= f.hidden_field :item_id, :value => @item.id %>

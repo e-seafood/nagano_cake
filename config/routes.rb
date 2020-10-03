@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :publics
 
+  devise_for :publics
+  devise_for :admins
 
   root 'publics/homes#top'
   get '/about' => "publics/homes#about"
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
       resources :shippings,only: [:index,:create,:edit,:update,:destroy]
     end
-  
+
   namespace :admins do
     resources :publics, only: [:index, :edit, :show, :update]
     resources :items, only: [:index, :create, :new, :edit, :show, :update]
