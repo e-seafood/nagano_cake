@@ -1,3 +1,49 @@
-<h1>ジャンル編集</h1>
-   <%= render 'admins/genres/post_genre',genre: @genre, path: admins_genre_path(@genre) %>
+<h1>
+  <%= @public.first_name %>
+  <%= @public.last_name %>
+  さんの会員情報編集
+</h1>
+
+<table>
+  <%= form_for(@public url:admins_public_path(@public)), do |f| %>
+    <tr>
+    	<td>顧客ID</td>
+    </tr>
+    <tr>
+    	<td>氏名</td>
+    	<td><%= f.text_field :first_name %> <%= f.text_field :last_name %></td>
+    </tr>
+    <tr>
+    	<td>フリガナ</td>
+    	<td><%= f.text_field :first_name_kana %> <%= f.text_field :last_name_kana %></td>
+    </tr>
+    <tr>
+    	<td>郵便番号</td>
+    	<td><%= f.text_field :postcode %></td>
+    </tr>
+    <tr>
+    	<td>住所</td>
+    	<td><%= f.text_field :adress %></td>
+    </tr>
+    <tr>
+    	<td>電話番号</td>
+    	<td><%= f.text_field :tel %></td>
+    </tr>
+    <tr>
+    	<td>メールアドレス</td>
+    	<td><%= f.text_field :email, autocomplete: "email" %></td>
+    </tr>
+    <tr>
+    	<td>
+    	  <%= f.radio_button :is_delete, :false %>
+        <%= f.label :true,"有効" %>
+        <%= f.radio_button :is_active, :true %>
+        <%= f.label :false,"退会済み" %>
+    	</td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "編集する", edit_admins_public_path(@public) %>
+<%= link_to "注文履歴一覧を見る",admins_orders_path(@public) %>
 

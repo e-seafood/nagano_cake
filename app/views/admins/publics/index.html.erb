@@ -1,28 +1,33 @@
-<h1>ジャンル一覧・追加</h1>
-  <%= render 'admins/genres/post_genre',genre: @genre, path: admins_genres_path(@genre) %>
 
-  <table>
-  	<thead>
-  	  <tr>
-  	    <th>ジャンル</th>
-  	    <th>状態</th>
-  	    <th></th>
-  	  </tr>
-  	</thead>
-  	<tbody>
-  		<% @genres.each do |genre| %>
-  		  <tr>
-  		  	<td><%= genre.name %></td>
-  		  	<td>
-            <% if genre.is_active == true %>
-              有効
-            <% else %>
-              無効
-            <% end %>
-          </td>
-          <td><%= link_to "編集する",edit_admins_genre_path(genre) %></td>
-  		  </tr>
-  		<% end %>
-  	</tbody>
-  </table>
+<h1>会員一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>会員ID</th>
+      <th>氏名</th>
+      <th>メールアドレス</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @publics.each do |public| %>
+    <tr>
+      <td><%= public.id %></td>
+      <td>
+        <%= link_to admins_public_path(public) do %>
+          <%= public.first_name %>
+          <%= public.last_name %>
+        <% end %>
+      </td>
+      <td>
+        <% if public.is_deleted == false %>
+          有効
+        <% else %>
+          退会
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
