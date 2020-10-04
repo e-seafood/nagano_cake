@@ -1,4 +1,4 @@
-<%= render "genre_search", items: @items %>
+<%= render "genre_search", genres:@genres, items: @items %>
 <% if params[:id] %>
   <h3><%= @genre.name %>一覧（全<%= @items.count %>件）</h3>
 <% else %>
