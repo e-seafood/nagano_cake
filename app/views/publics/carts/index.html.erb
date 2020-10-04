@@ -16,12 +16,13 @@
         <td><%= tax(cart.item.non_taxed_price) %></td>
         <td>
           <%= form_for(cart, url:cart_path(cart)) do |f| %>
-            <%= f.number_field :item_count, :value => cart.item_count %>
+            <%= f.text_field :item_count, :value => cart.item_count %>
             <%= f.submit "変更" %>
           <% end %>
         </td>
         <td><%= cart.item_count*tax(cart.item.non_taxed_price) %></td>
         <td>
+          <%= link_to "削除", cart_path(cart), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
         </td>
       </tr>
     <% end %>

@@ -16,6 +16,18 @@ class Publics::CartsController < ApplicationController
     redirect_to carts_path
   end
 
+  def update
+    @cart = Cart.find_by(id: params[:id])
+    @cart.update(cart_params)
+    redirect_to carts_path
+  end
+
+  def destroy
+    @cart = Cart.find_by(id: params[:id])
+    @cart.destroy
+    redirect_to carts_path
+  end
+
   private
   def cart_params
     params.require(:cart).permit(:public_id, :item_id, :item_count)
