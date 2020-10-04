@@ -1,4 +1,6 @@
 class Publics::PublicsController < ApplicationController
+		
+		before_action :authenticate_public!
 
 	def show
     @public = current_public
@@ -8,6 +10,11 @@ class Publics::PublicsController < ApplicationController
 	end
 
 	def withdraw
+		@public = current_public	
+		@public.update(is_deleted: true)
+
+    reset_session
+    redirect_to root_path
 	end
 
 	def edit
@@ -18,10 +25,11 @@ class Publics::PublicsController < ApplicationController
     @public = current_public
 		if @public.update(public_params)
       redirect_to publics_path
-    else
+		else
       render :edit 
     end
 	end
+
 
 	private
 
