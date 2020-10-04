@@ -1,0 +1,40 @@
+<h2>商品登録/一覧</h2>
+<%= form_for(@shipping) do |f| %>
+	<div class="field row">
+		<h3>郵便番号(ハイフンなし)</h3>
+		<%= f.text_field :postcode %>
+	</div>
+	<div class="field row">
+		<h3>住所</h3>
+		<%= f.text_field :address %>
+	</div>
+	<div class="field row">
+		<h3>宛名</h3>
+		<%= f.text_field :name %>
+	</div>
+	<div class="field row">
+		<%= f.submit '登録' %>
+	</div>
+<% end %>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>郵便番号</th>
+			<th>住所</th>
+			<th>宛名</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= shippings.each do |shipping| %>
+		  <tr class="new table">
+		  	<td><%= shipping.postcode %></td>
+		  	<td><%= shipping.address %></td>
+		  	<td><%= shipping.name %></td>
+		  	<td><%= link_to '編集する', edit_shipping_path(shipping) %></td>
+			<td><%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
