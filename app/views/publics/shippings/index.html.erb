@@ -1,21 +1,28 @@
 <h2>商品登録/一覧</h2>
-<%= form_for(@shipping) do |f| %>
-	<div class="field row">
-		<h3>郵便番号(ハイフンなし)</h3>
-		<%= f.text_field :postcode %>
-	</div>
-	<div class="field row">
-		<h3>住所</h3>
-		<%= f.text_field :address %>
-	</div>
-	<div class="field row">
-		<h3>宛名</h3>
-		<%= f.text_field :name %>
-	</div>
-	<div class="field row">
-		<%= f.submit '登録' %>
-	</div>
-<% end %>
+  <table>
+  	  <thead>
+  	  	<tr>
+  	  	  <th colspan="1"></th>
+  	  	  <th colspan="1"></th>
+  	  	  <th colspan="1"></th>
+  	  	</tr>
+  	  </thead>
+    <%= form_for(@shipping) do |f| %>
+	  <tr>
+		<td><%= f.label :postcode, "郵便番号(ハイフンなし)" %></td>
+		<td><%= f.text_field :postcode %></td>
+	  </tr>
+	  <tr>
+		<td><%= f.label :address, "住所" %></td>
+		<td><%= f.text_field :address, :size => 60 %></td>
+	  </tr>
+	  <tr>
+		<td><%= f.label :name, "宛名" %></td>
+		<td><%= f.text_field :name %></td>
+		<td><%= f.submit '登録',class:"btn btn-success" %></td>
+	  </tr>
+    <% end %>
+  </table>
 
 <table>
 	<thead>
@@ -27,7 +34,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= shippings.each do |shipping| %>
+		<% @shippings.each do |shipping| %>
 		  <tr class="new table">
 		  	<td><%= shipping.postcode %></td>
 		  	<td><%= shipping.address %></td>
