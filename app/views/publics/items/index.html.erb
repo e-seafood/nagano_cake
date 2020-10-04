@@ -1,0 +1,15 @@
+<%= render "genre_search", items: @items %>
+<% if params[:id] %>
+  <h3><%= @genre.name %>一覧（全<%= @items.count %>件）</h3>
+<% else %>
+  <h3>商品一覧（全<%= @items.count %>件）</h3>
+<% end %>
+<% @items.each do |item| %>
+  <div>
+    <%= link_to item_path(item) do %>
+      <%= attachment_image_tag item, :image, size: "150x100" %>
+    <% end %>
+  </div>
+  <p><strong><%= item.name %></strong></p>
+  <p><strong>￥<%= tax(item.non_taxed_price) %></strong><p>
+<% end %>
