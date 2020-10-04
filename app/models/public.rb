@@ -10,6 +10,8 @@ class Public < ApplicationRecord
 
   validates :first_name_kana,:last_name_kana, presence: true,
             format: {with:/[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+/}
+  validates :postcode, format:{with:/\A\d{7}\z/}
+  validates :tel, format:{with:/\A\d{10,11}\z/}
 
   #会員ステータスが退会済みならtrueを返すメゾット、退会済みユーザーのログインを弾く際に使用します。
   def active_for_authentication?
