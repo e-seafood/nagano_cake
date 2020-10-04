@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
   scope module: :publics do
     resources :items,only: [:index,:show]
-
-    resource :publics,only: [:show,:edit,:update] do
+    
+    resource :publics,only: [:show] do
       get '/unsubscribe' => "publics#unsubscribe"
       patch '/withdraw'=> "publics#withdraw"
+
+      get '/detailedit' => 'publics#edit', as: :edit
+      patch '/detailupdate' => 'publics#update', as: :update
     end
 
     resources :carts,only: [:index,:update,:create,:destroy] do
@@ -36,7 +39,10 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
   end
   get "admins/orders/top" => "admins/orders#top"
-
-  devise_for :admins
-
+  
+  devise_for :admins, :controllers => {
+    :registrations => 'admins/devise/registrations',
+    :sessions => 'admins/devise/sessions',
+    :passwords => 'admins/devise/passwords'
+  }
 end
