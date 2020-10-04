@@ -15,3 +15,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container{
+	border: 1px solid;
+	min-height: 700px;
+}
+.navbar{
+	border-bottom: 1px solid;
+}
