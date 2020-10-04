@@ -4,13 +4,8 @@ Rails.application.routes.draw do
 
   scope module: :publics do
     resources :items,only: [:index,:show]
-<<<<<<< HEAD
     
     resource :publics,only: [:show] do
-=======
-
-    resource :publics,only: [:show,:edit,:update] do
->>>>>>> e27cecf1126abadba88bfebea3678b217c0880e4
       get '/unsubscribe' => "publics#unsubscribe"
       patch '/withdraw'=> "publics#withdraw"
 
