@@ -39,17 +39,10 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
   end
   get "admins/orders/top" => "admins/orders#top"
-<<<<<<< HEAD
   
   devise_for :admins, :controllers => {
     :registrations => 'admins/devise/registrations',
     :sessions => 'admins/devise/sessions',
     :passwords => 'admins/devise/passwords'
   }
-  
-=======
-
-  devise_for :admins
-
->>>>>>> e27cecf1126abadba88bfebea3678b217c0880e4
 end
