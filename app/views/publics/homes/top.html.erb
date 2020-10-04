@@ -1,6 +1,13 @@
-<p>
-  ようこそ、NaganoCakeへ！<br>
-  このサイトは、ケーキ販売のECサイトになります。<br>
-  会員でない方も商品の閲覧はできますが、<br>
-  購入には会員登録が必要になります。
-</p>
+<div class="row">
+  <div class="col-xs-3">
+	<%= render "publics/items/genre_search", genres: @genres,items: @items %>
+  </div>
+  <div class="col-xs-9">
+	<p>
+	  ようこそ、NaganoCakeへ！<br>
+	  このサイトは、ケーキ販売のECサイトになります。<br>
+	  会員でない方も商品の閲覧はできますが、<br>
+	  購入には会員登録が必要になります。
+	</p>
+  </div>
+</div>
