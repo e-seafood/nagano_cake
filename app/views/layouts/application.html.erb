@@ -7,11 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet"  href="style.css">
   </head>
 
   <body>
-    <haeder class="header">
-      <div class="container">
+    <div class="container">
+    <haeder class="navbar">
         <nav class="nav navbar-nav navbar-left">
           <span>ながのCAKE</span>
         </nav>
@@ -19,17 +20,17 @@
           <ul class="nav navbar-nav navbar-right">
             <% if public_signed_in? %>
               <%= render "layouts/header_login" %>
-              <% if admin_signed_in? %>
-                <%= render "layouts/header_admin" %>
-              <% end %>
+                <% if admin_signed_in? %>
+                  <%= render "layouts/header_admin" %>
+                <% end %>
             <% else %>
               <%= render "layouts/header_no_login" %>
             <% end %>
           </ul>
         </nav>
-      </div>
     </haeder>
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
 
