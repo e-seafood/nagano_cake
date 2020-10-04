@@ -1,43 +1,63 @@
 <h2>登録情報編集</h2>
-  <table>
     <%= form_with(model:@public, url:publics_path, local: true ,method: :patch) do |f| %>
 
+      <table class="table" id="table-borderless">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
-        <td><%= f.label :"名前", class: "" %></td>
-        <td><%= f.label :"(姓)", class: "" %><%= f.text_field :last_name, class: "" %></td>
-        <td><%= f.label :"(名)", class: "" %><%= f.text_field :first_name, class: "" %></td>
+        <td><%= f.label :"名前" %></td>
+        <td><%= f.label :"(姓)" %></td>
+        <td><%= f.text_field :last_name %></td>
+        <td><%= f.label :"(名)" %></td>
+        <td><%= f.text_field :first_name %></td>
       </tr>
 
       <tr>
-        <td><%= f.label :"フリガナ", class: "" %>
-        <td><%= f.label :"(セイ)", class: "" %><%= f.text_field :last_name_kana, class: "" %></td>
-        <td><%= f.label :"(メイ)", class: "" %><%= f.text_field :first_name_kana, class: "" %></td>
+        <td><%= f.label :"フリガナ", class: "" %></td>
+        <td><%= f.label :"(セイ)", class: "" %></td>
+        <td><%= f.text_field :last_name_kana, class: "" %></td>
+        <td><%= f.label :"(メイ)", class: "" %></td>
+        <td><%= f.text_field :first_name_kana, class: "" %></td>
       </tr>
 
       <tr>
         <td><%= f.label :"メールアドレス", class: "" %></td>
+        <td></td>
         <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
       </tr>
 
       <tr>
         <td><%= f.label :"郵便番号(ハイフンなし)", class: "" %></td>
+        <td></td>
         <td><%= f.text_field :postcode, class: "" %></td>
       </tr>
 
       <tr>
         <td><%= f.label :"住所", class: "" %></td>
-        <td colspan="3"><%= f.text_field :address, class: "" ,:size => 50 %></td>
+        <td></td>
+        <td colspan="3"><%= f.text_field :address,size:60 %></td>
       </tr>
 
       <tr>
         <td><%= f.label :"電話番号(ハイフンなし)", class: "" %></td>
+        <td></td>
         <td><%= f.text_field :tel, class: "" %></td>
       </tr>
 
       <tr>
         <td></td>
-        <td><%= f.submit "編集内容を保存する", class: "btn btn-primary" %></td>
+        <td colspan="2"><%= f.submit "編集内容を保存する", class: "btn btn-primary" %></td>
+        <td></td>
         <td><%= link_to "退会する", publics_path, class: "btn btn-danger"%></td>
       </tr>
-    <% end %>
+    </tbody>
   </table>
+  <% end %>

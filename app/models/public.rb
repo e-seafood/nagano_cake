@@ -8,8 +8,10 @@ class Public < ApplicationRecord
   has_many :shippings
   has_many :carts, through: :carts
 
-  validates :first_name_kana,:last_name_kana, presence: true,
-            format: {with:/[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+/}
+  validates :first_name_kana,:last_name_kana,
+            format: {
+              with:/[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+/,
+            }
   validates :postcode, format:{with:/\A\d{7}\z/}
   validates :tel, format:{with:/\A\d{10,11}\z/}
 

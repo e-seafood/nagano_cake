@@ -17,6 +17,7 @@
 @import "bootstrap";
 
 .container{
+	position: relative;
 	border: 1px solid;
 	min-height: 700px;
 }
@@ -25,4 +26,17 @@
 }
 .publis_name{
 	padding: 15px;
+}
+#table-borderless > thead > tr > th,
+#table-borderless > tbody > tr > td {
+	border: none;
+	padding: 5px;
+}
+.footer{
+	position: absolute;
+    bottom: 0;
+    right:0;
+    min-height: 50px;
+    width: 100%;
+	border-top: 1px solid;
 }
