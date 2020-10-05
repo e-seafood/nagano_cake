@@ -3,7 +3,7 @@ class Publics::PublicsController < ApplicationController
 	def show
     @public = current_public
 	end
-	
+
 	def unsubscribe
 	end
 
@@ -19,7 +19,7 @@ class Publics::PublicsController < ApplicationController
 		if @public.update(public_params)
       redirect_to publics_path
     else
-      render :edit 
+      render :edit
     end
 	end
 

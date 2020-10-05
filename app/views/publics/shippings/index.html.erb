@@ -1,4 +1,4 @@
-<h2>商品登録/一覧</h2>
+<h2>配送先登録/一覧</h2>
 <%= form_for(@shipping) do |f| %>
 	<div class="field row">
 		<h3>郵便番号(ハイフンなし)</h3>
@@ -27,7 +27,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= shippings.each do |shipping| %>
+		<% @shippings.each do |shipping| %>
 		  <tr class="new table">
 		  	<td><%= shipping.postcode %></td>
 		  	<td><%= shipping.address %></td>

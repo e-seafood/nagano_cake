@@ -13,77 +13,25 @@
     <haeder class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <nav class="nav navbar-nav navbar-left">
-          <span>ながのCAKE</span>
+          <span>ながのCake</span>
         </nav>
         <nav>
 
           <ul class="nav navbar-nav navbar-right">
             <% if public_signed_in? %>
-
-              <li class="">
-                <%= link_to 'マイページ', publics_path %>
-              </li>
-
-              <li class="">
-                <%= link_to '商品一覧', items_path %>
-              </li>
-
-              <li class="">
-                <%= link_to 'カート', carts_path %>
-              </li>
-
-              <li class="">
-                <%= link_to 'ログアウト', destroy_public_session_path, method: :delete %>
-              </li>
-
+              <%= render "layouts/header_login" %>
+                <% if admin_signed_in? %>
+                  <%= render "layouts/header_admin" %>
+                <% end %>
             <% else %>
-
-              <li class="">
-                <%= link_to 'About', about_path %>
-              </li>
-
-              <li class="">
-                <%= link_to '商品一覧', items_path %>
-              </li>
-
-              <li class="">
-                <%= link_to '新規登録', new_public_registration_path %>
-              </li>
-
-              <li class="">
-                <%= link_to 'ログイン', public_session_path %>
-              </li>
-
-            <% end %>
-
-            <% if admin_signed_in? %>
-
-              <li class="">
-                <%= link_to '商品一覧', items_path %>
-              </li>
-
-              <li class="">
-                <%= link_to '会員一覧', admins_publics_path %>
-              </li>
-
-              <li class="">
-                <%= link_to '注文履歴一覧', admins_orders_path %>
-              </li>
-
-              <li class="">
-                <%= link_to 'ジャンル一覧', admins_genres_path %>
-              </li>
-
-              <li class="">
-                <%= link_to 'ログアウト', destory_admin_session_path, method: :delete %>
-              </li>
+              <%= render "layouts/header_no_login" %>
             <% end %>
 
           </ul>
         </nav>
       </div>
     </haeder>
-    <% yeild %>
+    <%= yield %>
   </body>
 </html>
 
