@@ -14,7 +14,11 @@
 	  	  <% @orders.each do |order| %>
 	  	    <tr>
 	  	      <td><%= l order.created_at %></td>
-	  	      <td><%= order.public.last_name %> <%= order.public.first_name %></td>
+	  	      <td>
+	  	      	<%= link_to admins_order_path(order) do %>
+	  	      	  <%= order.public.last_name %> <%= order.public.first_name %>
+	  	      	<% end %>
+	  	      </td>
 	  	      <td><%= order.order_items.count %></td>
 	  	      <td><%= order.status %></td>
 	  	    </tr>
