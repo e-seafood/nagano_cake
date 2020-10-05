@@ -8,7 +8,8 @@ class Public < ApplicationRecord
   has_many :shippings
   has_many :carts, through: :carts
 
-  #会員ステータスが退会済みならtrueを返すメゾット、退会済みユーザーのログインを弾く際に使用します。
+  validates_uniqueness_of :email
+  
   def active_for_authentication?
   	super && (self.is_deleted === false)
   end
