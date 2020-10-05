@@ -7,7 +7,7 @@ Admin.create!(
 
 10.times do |n|
 Public.create!(
-	email: "aaa#{n+1}@test",
+	email: "test#{n+1}@test",
 	last_name: "姓#{n+1}",
 	first_name: "名#{n+1}",
 	last_name_kana: "セイ#{n+1}",
