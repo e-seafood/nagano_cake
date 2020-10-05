@@ -1,0 +1,28 @@
+<h3>商品詳細</h3>
+<%= attachment_image_tag @item, :image, :fill, 100, 100 %>
+<table>
+  <thead>
+    <tr>
+      <td>商品名</td>
+      <td>ジャンル</td>
+      <td>税込価格（税抜価格）</td>
+      <td>ステータス</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @item.name %></td>
+      <td><%= @item.genre.name %></td>
+      <td>
+      　<%= tax(@item.non_taxed_price) %>（<%= @item.non_taxed_price %>）円</td>
+      <td>
+        <% if @item.is_active == true %>
+          <p>販売中</p>
+        <% else %>
+          <p>売切れ</p>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to "編集する", edit_admins_item_path %>
