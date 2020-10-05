@@ -7,11 +7,11 @@ Admin.create!(
 
 10.times do |n|
 Public.create!(
-	email: "test#{n+1}@test",
+	email: "aaa#{n+1}@test",
 	last_name: "姓#{n+1}",
 	first_name: "名#{n+1}",
-	last_name_kana: "せい#{n+1}",
-	first_name_kana: "めい#{n+1}",
+	last_name_kana: "セイ#{n+1}",
+	first_name_kana: "メイ#{n+1}",
 	postcode: "1234567",
 	address: "東京都渋谷区神宮前三丁目",
 	tel: "09012345678",
