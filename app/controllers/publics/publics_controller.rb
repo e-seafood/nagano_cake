@@ -5,7 +5,7 @@ class Publics::PublicsController < ApplicationController
 	def show
     @public = current_public
 	end
-	
+
 	def unsubscribe
 	end
 

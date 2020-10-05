@@ -6,11 +6,12 @@ class Publics::ShippingsController < ApplicationController
 	end
 
 	def create
-		shipping = Shipping.new(shipping_params)
-		if   shipping.save
-		     reditect_to shippings_path(shipping)
+		@shipping = Shipping.new(shipping_params)
+		@shipping.public_id = current_public.id
+		if   @shipping.save
+		     redirect_to shippings_path
 		else
-		 	render "edit"
+		 	render "index"
 		 	flash[:notice] = "登録出来ませんでした"
 		end
 	end
@@ -21,14 +22,19 @@ class Publics::ShippingsController < ApplicationController
 
 	def update
 		@shipping = Shipping.find(params[:id])
-		@shipping.update(shipping_params)
-		redirect_to publics_shipping_path
+		if  @shipping.update(shipping_params)
+			flash[:success] = "更新に成功しました"
+		    redirect_to shippings_path
+		else
+			flash[:warning] = "入力内容を確認してください"
+			render 'edit'
+		end
 	end
 
 	def destroy
 		@shipping = Shipping.find(params[:id])
-		shipping.destroy
-		redirect_to publics_shipping_path
+		@shipping.destroy
+		redirect_to shippings_path
 	end
 
 	private
