@@ -1,16 +1,16 @@
 class Publics::CartsController < ApplicationController
 
   def index
-    @carts = Cart.all
+    @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
   end
 
   def create
-    @cart = Cart.new(cart_params)
-    @cart.public.id = current_public.id
-    @cart_item = Cart.find_by(item_id: @cart.item_id)
-    if @cart_item.present?
-      @cart.item_count += @cart_item.item_count
-      @cart_item.destroy
+    @cart = Cart.find_by(public_id: current_public.id, item_id: params[:cart][:item_id])
+    if @cart.blank?
+      @cart = Cart.new(cart_params)
+      @cart.public_id = current_public.id
+    else
+      @cart.item_count += params[:cart][:item_count].to_i
     end
     @cart.save
     redirect_to carts_path
@@ -25,6 +25,11 @@ class Publics::CartsController < ApplicationController
   def destroy
     @cart = Cart.find_by(id: params[:id])
     @cart.destroy
+    redirect_to carts_path
+  end
+
+  def destroy_all
+    @carts = Cart.where(public_id: current_public.id).destroy_all
     redirect_to carts_path
   end
 
