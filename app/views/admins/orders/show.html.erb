@@ -39,11 +39,30 @@
   	  	  <td><%= order_item.item.name %></td>
   	  	  <td><%= tax(order_item.item.non_taxed_price) %></td>
   	  	  <td><%= order_item.item_count %></td>
-  	  	  <td><%= amount(tax(order_item.item.non_taxed_price),order_item.item_count) %></td>
+  	  	  <td><%= sub_total(order_item) %></td>
   	  	  <td><%= order_item.making_status %></td>
   	    </tr>
   	  <% end %>
   	</tbody>
   </table>
+  </div>
+  <div class="col-xs-2">
+    <table class="table" id="table-borderless">
+      <tbody>
+        <tr>
+          <th>商品合計</th>
+          <td><%= items_total(@order.order_items) %></td>
+        </tr>
+         <tr>
+          <th>送料</th>
+          <td><%= post_age %></td>
+        </tr>
+         <tr>
+          <th>請求金額合計</th>
+          <th><%= amount(@order.order_items) %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
