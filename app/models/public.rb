@@ -6,11 +6,11 @@ class Public < ApplicationRecord
 
   has_many :orders
   has_many :shippings
-  has_many :carts, through: :carts
-
+  has_many :carts
+  has_many :items, through: :carts
 
   validates_uniqueness_of :email
-  
+
   validates :first_name_kana,:last_name_kana,
             format: {
               with:/[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+/,
