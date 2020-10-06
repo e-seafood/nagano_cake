@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'publics/homes#top'
   get '/about' => "publics/homes#about"
 
@@ -18,9 +19,9 @@ Rails.application.routes.draw do
     end
 
     resources :orders,only: [:new,:index,:show,:create] do
-      post '/confirm' => "orders#confirm"
-      get '/thank' => "orders#thank"
     end
+    post '/confirm' => "orders#confirm"
+    get '/thank' => "orders#thank"
 
     resources :shippings,only: [:index,:create,:edit,:update,:destroy]
   end
