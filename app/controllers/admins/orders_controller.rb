@@ -1,7 +1,8 @@
 class Admins::OrdersController < ApplicationController
+
 	def top
 	end
-	
+
 	def index
 		@orders = Order.all
 	end
@@ -13,9 +14,7 @@ class Admins::OrdersController < ApplicationController
 	def update
 	end
 
-
-
-private
+    private
 	def order_params
 		params.require(:order).permit(:status,:postcode,:address,:name,:payment,:postage,:amount)
 	end
