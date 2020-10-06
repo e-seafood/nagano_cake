@@ -37,9 +37,19 @@ end
 def thank
 end
 
-  private
-  def order_params
-    params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
-  end
+def index
+	@orders = current_public.orders
+end
+
+def show
+  @order = Order.find(params[:id])
+  @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+	@order_items = @order.order_items
+end
+
+private
+def order_params
+	params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
+end
 
 end
