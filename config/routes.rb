@@ -19,14 +19,13 @@ Rails.application.routes.draw do
     end
 
     resources :orders,only: [:new,:index,:show,:create] do
-<<<<<<< HEAD
-=======
       collection do
         post '/confirm' => "orders#confirm"
         get '/thank' => "orders#thank"
       end
->>>>>>> f5e8e0f95bad98be838fc08dac5a65f29f319d49
+
     end
+    
     post '/confirm' => "orders#confirm"
     get '/thank' => "orders#thank"
 
@@ -40,13 +39,14 @@ Rails.application.routes.draw do
     }
 
   namespace :admins do
+    root 'orders#top'
     resources :publics, only: [:index, :edit, :show, :update]
     resources :items, only: [:index, :create, :new, :edit, :show, :update]
     resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
     resources :genres, only: [:index, :create, :edit, :update]
   end
-  get "admins/orders/top" => "admins/orders#top"
+
 
   devise_for :admins, :controllers => {
     :registrations => 'admins/devise/registrations',

@@ -1,19 +1,8 @@
 class Publics::OrdersController < ApplicationController
 
-<<<<<<< HEAD
-	def index
-		@orders = current_public.orders
-	end
-
-	def show
-		@order = Order.find(params[:id])
-    @order_items = @order.order_items
-	end
-	
-=======
-def new
-  @order = Order.new
-  @shippings = Shipping.where(public_id: current_public.id)
+	def new
+		@order = Order.new
+		@shippings = Shipping.where(public_id: current_public.id)
 end
 
 def confirm
@@ -36,10 +25,19 @@ end
 def thank
 end
 
-  private
-  def order_params
-    params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
-  end
+def index
+	@orders = current_public.orders
+end
 
->>>>>>> f5e8e0f95bad98be838fc08dac5a65f29f319d49
+def show
+  @order = Order.find(params[:id])
+  @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+	@order_items = @order.order_items
+end
+
+private
+def order_params
+	params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
+end
+
 end
