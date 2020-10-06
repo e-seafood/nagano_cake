@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   scope module: :publics do
     resources :items,only: [:index,:show]
-    
+
     resource :publics,only: [:show] do
       get '/unsubscribe' => "publics#unsubscribe"
       patch '/withdraw'=> "publics#withdraw"
@@ -19,6 +19,13 @@ Rails.application.routes.draw do
     end
 
     resources :orders,only: [:new,:index,:show,:create] do
+<<<<<<< HEAD
+=======
+      collection do
+        post '/confirm' => "orders#confirm"
+        get '/thank' => "orders#thank"
+      end
+>>>>>>> f5e8e0f95bad98be838fc08dac5a65f29f319d49
     end
     post '/confirm' => "orders#confirm"
     get '/thank' => "orders#thank"
@@ -40,7 +47,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
   end
   get "admins/orders/top" => "admins/orders#top"
-  
+
   devise_for :admins, :controllers => {
     :registrations => 'admins/devise/registrations',
     :sessions => 'admins/devise/sessions',
