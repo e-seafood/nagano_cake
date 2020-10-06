@@ -1,6 +1,10 @@
 class Publics::OrdersController < ApplicationController
 
 def new
+  @carts = Cart.where(public_id: current_public.id)
+  if @carts.blank?
+    redirect_to carts_path
+  end
   @order = Order.new
   @shippings = Shipping.where(public_id: current_public.id)
 end
