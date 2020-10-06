@@ -6,19 +6,23 @@ def new
 end
 
 def confirm
-  @order = Order.new(order_params)
-  @order.public_id = current_public.id
-  @carts = Cart.where(public_id: current_public.id)
-  if :select_addres == "ご自身の住所"
+  @order = Order.new(payment: params[:order][:payment])
+  @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+  if params[:select_address] == "ご自身の住所"
     @order.postcode = current_public.postcode
     @order.address = current_public.address
-    @order.name = current_public.name
-  elsif :select_address == "登録済みの住所"
-  else
+    @order.name = current_public.last_name + current_public.first_name
   end
-    
+end
+
+def create
+  @order = Order.new(order_params)
+  @order.public_id = current_public.id
   @order.save
-  redirect_to order_confirm_path(@order)
+  redirect_to thank_orders_path
+end
+
+def thank
 end
 
   private
