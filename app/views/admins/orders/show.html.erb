@@ -47,7 +47,12 @@
   	  	  <td><%= tax(order_item.item.non_taxed_price) %></td>
   	  	  <td><%= order_item.item_count %></td>
   	  	  <td><%= sub_total(order_item) %></td>
-  	  	  <td><%= order_item.making_status %></td>
+  	  	  <td>
+            <%= form_for(order_item, url:admins_order_item_path(order_item)) do |f| %>
+              <%= f.select :making_status, OrderItem.making_statuses.keys,{}, class:"form" %>
+              <%= f.submit "更新" %>
+            <% end %>
+          </td>
   	    </tr>
   	  <% end %>
   	</tbody>
