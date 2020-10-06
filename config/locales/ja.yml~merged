@@ -2,4 +2,7 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+<<<<<<< HEAD
       short: "%Y/%m/%d"
+=======
+>>>>>>> f5e8e0f95bad98be838fc08dac5a65f29f319d49

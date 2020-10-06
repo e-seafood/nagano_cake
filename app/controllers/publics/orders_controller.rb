@@ -1,9 +1,18 @@
 class Publics::OrdersController < ApplicationController
 
+<<<<<<< HEAD
   def new
     @order = Order.new
     @shippings = Shipping.where(public_id: current_public.id)
   end
+=======
+include ApplicationHelper
+
+def new
+  @order = Order.new
+  @shippings = Shipping.where(public_id: current_public.id)
+end
+>>>>>>> 69011a491d7607bfd0f920abfec87f2bb7441f69
 
 def confirm
   @order = Order.new(payment: params[:order][:payment])
@@ -35,10 +44,27 @@ end
 def thank
 end
 
+<<<<<<< HEAD
 private
   def order_params
     params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
 end
 
+=======
+def index
+	@orders = current_public.orders
+end
+
+def show
+  @order = Order.find(params[:id])
+  @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+	@order_items = @order.order_items
+end
+
+private
+def order_params
+	params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
+end
+>>>>>>> 69011a491d7607bfd0f920abfec87f2bb7441f69
 
 end
