@@ -20,6 +20,15 @@ def create
   @order.public_id = current_public.id
   @order.save
   redirect_to thank_orders_path
+  @carts = Cart.where(public_id: current_public.id)
+  @carts.each do |cart|
+    OrderItem.create(
+      item_id: cart.item_id,
+      order_id: @order_id,
+      item_count: cart.item_count
+    )
+  end
+  @carts.destroy_all
 end
 
 def thank

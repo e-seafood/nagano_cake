@@ -28,7 +28,8 @@
 	padding: 15px;
 }
 #table-borderless > thead > tr > th,
-#table-borderless > tbody > tr > td {
+#table-borderless > tbody > tr > td,
+#table-borderless > tbody > tr > th {
 	border: none;
 	padding: 5px;
 }
