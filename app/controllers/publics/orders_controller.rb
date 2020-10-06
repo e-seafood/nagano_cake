@@ -22,11 +22,10 @@ def create
   redirect_to thank_orders_path
   @carts = Cart.where(public_id: current_public.id)
   @carts.each do |cart|
-    OrderItem.create(
-      item_id: cart.item_id,
-      order_id: @order_id,
-      item_count: cart.item_count
-    )
+    @order_item = OrderItem.new
+    @order_item.item_id = cart.item_id
+    @order_item.order_id = @order_id
+    @order_item.item_count = cart.item_count
   end
   @carts.destroy_all
 end
