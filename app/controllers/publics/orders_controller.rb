@@ -3,15 +3,11 @@ class Publics::OrdersController < ApplicationController
 include ApplicationHelper
 
 def new
-  # ログインユーザのカート情報を持ってくる。
   @carts = Cart.where(public_id: current_public.id)
-  # 空の場合はカート一覧に戻す。
   if @carts.blank?
     redirect_to carts_path
   end
-  # 新規注文作成
   @order = Order.new
-  # ログインユーザの配送先の読み込み
   @shippings = Shipping.where(public_id: current_public.id)
 end
 
