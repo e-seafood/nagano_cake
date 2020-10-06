@@ -10,28 +10,34 @@
   </head>
 
   <body>
-    <div class="container">
-    <haeder class="navbar">
-        <nav class="nav navbar-nav navbar-left">
-          <span>ながのCake</span>
-        </nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if public_signed_in? %>
-              <%= render "layouts/header_login" %>
+    <div class="container header">
+
+        <haeder class="navbar">
+          <nav class="nav navbar-nav navbar-left">
+            <span>ながのCake</span>
+          </nav>
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <% if public_signed_in? %>
+                <%= render "layouts/header_login" %>
+              <% else %>
                 <% if admin_signed_in? %>
                   <%= render "layouts/header_admin" %>
+                <% else %>
+                  <%= render "layouts/header_no_login" %>
                 <% end %>
-            <% else %>
-              <%= render "layouts/header_no_login" %>
-            <% end %>
-
-          </ul>
-        </nav>
-    </haeder>
-      <%= yield %>
-      <footer class="footer"></footer>
+              <% end %>
+            </ul>
+          </nav>
+        </haeder>
     </div>
+    <div class="container main">
+      <%= yield %>
+    </div>
+    </div>
+    <div class="container">
+      <footer class="row footer"></footer>
+  </div>
   </body>
 </html>
 
