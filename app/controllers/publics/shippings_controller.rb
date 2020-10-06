@@ -1,7 +1,7 @@
 class Publics::ShippingsController < ApplicationController
 
 	def index
-		@shippings = Shipping.where(public_id: current_public.id)
+		@shippings = Shipping.all
 		@shipping = Shipping.new
 	end
 
