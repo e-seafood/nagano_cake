@@ -24,5 +24,4 @@ module ApplicationHelper
     items_total(carts) + post_age
   end
 
-
 end

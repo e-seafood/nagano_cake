@@ -1,0 +1,25 @@
+<h1>注文履歴一覧</h1>
+  <div class="row">
+  	<div class="col-xs-8 col-xs-offset-2">
+	  <table class="table">
+	  	<thead>
+		  <tr class="active">
+			<th>購入履歴</th>
+			<th>購入者</th>
+			<th>注文個数</th>
+			<th>注文ステータス</th>
+		  </tr>
+	  	</thead>
+	  	<tbody>
+	  	  <% @orders.each do |order| %>
+	  	    <tr>
+	  	      <td><%= l order.created_at %></td>
+	  	      <td><%= order.public.last_name %> <%= order.public.first_name %></td>
+	  	      <td><%= order.order_items.count %></td>
+	  	      <td><%= order.status %></td>
+	  	    </tr>
+	  	  <% end %>
+	  	</tbody>
+	  </table>
+	</div>
+  </div>
