@@ -1,8 +1,10 @@
 class Publics::OrdersController < ApplicationController
 
-	def new
-		@order = Order.new
-		@shippings = Shipping.where(public_id: current_public.id)
+include ApplicationHelper
+
+def new
+  @order = Order.new
+  @shippings = Shipping.where(public_id: current_public.id)
 end
 
 def confirm
@@ -22,11 +24,12 @@ def create
   redirect_to thank_orders_path
   @carts = Cart.where(public_id: current_public.id)
   @carts.each do |cart|
-    OrderItem.create(
-      item_id: cart.item_id,
-      order_id: @order_id,
-      item_count: cart.item_count
-    )
+    @order_item = OrderItem.new
+    @order_item.item_id = cart.item_id
+    @order_item.order_id = @order.id
+    @order_item.item_count = cart.item_count
+    @order_item.tax_included_price = sub_total(cart)
+    @order_item.save
   end
   @carts.destroy_all
 end
