@@ -3,19 +3,17 @@
     <%= render "genre_search", genres:@genres, items: @items %>
   </div>
   <div class="col-xs-8">
-  <% if params[:id] %>
-    <h3><%= @genre.name %>一覧（全<%= @items.count %>件）</h3>
-  <% else %>
-    <h3>商品一覧（全<%= @items.count %>件）</h3>
-  <% end %>
-  <% @items.each do |item| %>
-    <div>
-      <%= link_to item_path(item) do %>
-      <%= attachment_image_tag item, :image, :fill, 100, 100 %>
-      <% end %>
-    </div>
-    <p><strong><%= item.name %></strong></p>
-    <p><strong>￥<%= tax(item.non_taxed_price) %></strong></p>
-  <% end %>
+    <% if params[:id] %>
+      <h4><%= @genre.name %>一覧（全<%= @items.count %>件）</h4>
+    <% else %>
+      <h4>商品一覧（全<%= @items.count %>件）</h4>
+    <% end %>
+    <% @items.each do |item| %>
+        <%= link_to item_path(item) do %>
+          <%= attachment_image_tag item, :image, :fill, 150, 100 %>
+        <% end %>
+        <p><strong><%= item.name %></strong></p>
+        <p><strong>￥<%= tax(item.non_taxed_price) %></strong></p>
+    <% end %>
   </div>
 </div>
