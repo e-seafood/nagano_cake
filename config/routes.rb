@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  
   root 'publics/homes#top'
   get '/about' => "publics/homes#about"
 
   scope module: :publics do
     resources :items,only: [:index,:show]
-    
+
     resource :publics,only: [:show] do
       get '/unsubscribe' => "publics#unsubscribe"
       patch '/withdraw'=> "publics#withdraw"
@@ -18,9 +19,15 @@ Rails.application.routes.draw do
     end
 
     resources :orders,only: [:new,:index,:show,:create] do
-      post '/confirm' => "orders#confirm"
-      get '/thank' => "orders#thank"
+      collection do
+        post '/confirm' => "orders#confirm"
+        get '/thank' => "orders#thank"
+      end
+
     end
+    
+    post '/confirm' => "orders#confirm"
+    get '/thank' => "orders#thank"
 
     resources :shippings,only: [:index,:create,:edit,:update,:destroy]
   end
@@ -32,14 +39,15 @@ Rails.application.routes.draw do
     }
 
   namespace :admins do
+    root 'orders#top'
     resources :publics, only: [:index, :edit, :show, :update]
     resources :items, only: [:index, :create, :new, :edit, :show, :update]
     resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
     resources :genres, only: [:index, :create, :edit, :update]
   end
-  get "admins/orders/top" => "admins/orders#top"
-  
+
+
   devise_for :admins, :controllers => {
     :registrations => 'admins/devise/registrations',
     :sessions => 'admins/devise/sessions',
