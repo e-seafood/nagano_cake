@@ -23,8 +23,13 @@ class Publics::CartsController < ApplicationController
 
   def update
     @cart = Cart.find_by(id: params[:id])
-    @cart.update(cart_params)
-    redirect_to carts_path
+    if @cart.update(cart_params)
+      redirect_to carts_path
+    else
+      flash.now[:alert] = '個数は1以上を選択してください。'
+      @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+      render :index
+    end
   end
 
   def destroy
