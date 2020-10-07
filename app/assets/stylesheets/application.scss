@@ -29,10 +29,16 @@
 .publis_name {
 	padding: 15px;
 }
+<<<<<<< HEAD
 
 #table-borderless>thead>tr>th,
 #table-borderless>tbody>tr>td,
 #table-borderless>tbody>tr>th {
+=======
+#table-borderless > thead > tr > th,
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th {
+>>>>>>> ded06fd4da921157ecbc37645caf3a9a5ffbe27d
 	border: none;
 	padding: 5px;
 }

@@ -24,4 +24,12 @@ module ApplicationHelper
     items_total(carts) + post_age
   end
 
+  def items_count(items)
+    items_count = 0
+    items.each do |item|
+      items_count += item.item_count
+    end
+    return items_count
+  end
+
 end

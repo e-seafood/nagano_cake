@@ -1,7 +1,7 @@
 <h1>注文履歴一覧</h1>
   <div class="row">
   	<div class="col-xs-8 col-xs-offset-2">
-	  <table class="table">
+	  <table class="table table-borderless">
 	  	<thead>
 		  <tr class="active">
 			<th>購入履歴</th>
@@ -19,11 +19,7 @@
 	  	      	  <%= order.public.last_name %> <%= order.public.first_name %>
 	  	      	<% end %>
 	  	      </td>
-	  	      <td>
-	  	      	<% order.order_items.each do |order_item| %>
-	  	      	  <%= order_item.item_count %>
-	  	      	<% end %>
-	  	      </td>
+	  	      <td><%= items_count(order.order_items) %></td>
 	  	      <td><%= order.status %></td>
 	  	    </tr>
 	  	  <% end %>
