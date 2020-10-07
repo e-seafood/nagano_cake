@@ -33,6 +33,17 @@
 	border: none;
 	padding: 5px;
 }
+.text_rigth{
+	text-align: right;
+}
+.flax-main{
+	display: flex;
+	align-content: flex-end;
+}
+.flex-bottom{
+	display: flex;
+	align-items: flex-end;
+}
 .header{
 	border: 1px solid;
 	border-bottom: none;
