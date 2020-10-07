@@ -1,22 +1,29 @@
 <div class="row" >
   <div class="col-xs-9 col-xs-offset-1">
 	<h1>注文履歴詳細</h1>
-	  <table>
-	  	<tr>
-	  	  <th>購入者</th>
-	  	  <td><%= @order.public.last_name %> <%= @order.public.first_name %></td>
-	  	</tr>
-	  	<tr>
-	  	  <th>配送先</th>
-	  	  <td>〒<%= @order.postcode %>　<%= @order.address %>　<%= @order.name %></td>
-	  	</tr>
-	  	<tr>
-	  	  <th>支払方法</th>
-	  	  <td><%= @order.payment %></td>
-	  	</tr>
-	  		<th>注文ステータス</th>
-	  		<td><%= @order.status %></td>
-	  	</tr>
+	  <table class="table table-borderless" >
+      <tbody>
+  	  	<tr>
+  	  	  <th>購入者</th>
+  	  	  <td><%= @order.public.last_name %> <%= @order.public.first_name %></td>
+  	  	</tr>
+  	  	<tr>
+  	  	  <th>配送先</th>
+  	  	  <td>〒<%= @order.postcode %>　<%= @order.address %><br><%= @order.name %></td>
+  	  	</tr>
+  	  	<tr>
+  	  	  <th>支払方法</th>
+  	  	  <td><%= @order.payment %></td>
+  	  	</tr>
+  	  		<th>注文ステータス</th>
+  	  		<td>
+            <%= form_for(@order, url:admins_order_path(@order)) do |f| %>
+              <%= f.select :status, Order.statuses.keys,{}, class:"form" %>
+              <%= f.submit "更新" %>
+            <% end %>
+          </td>
+  	  	</tr>
+      </tbody>
 	  </table>
   </div>
 </div>
@@ -40,14 +47,19 @@
   	  	  <td><%= tax(order_item.item.non_taxed_price) %></td>
   	  	  <td><%= order_item.item_count %></td>
   	  	  <td><%= sub_total(order_item) %></td>
-  	  	  <td><%= order_item.making_status %></td>
+  	  	  <td>
+            <%= form_for(order_item, url:admins_order_item_path(order_item)) do |f| %>
+              <%= f.select :making_status, OrderItem.making_statuses.keys,{}, class:"form" %>
+              <%= f.submit "更新" %>
+            <% end %>
+          </td>
   	    </tr>
   	  <% end %>
   	</tbody>
   </table>
   </div>
   <div class="col-xs-2">
-    <table class="table" id="table-borderless">
+    <table class="table table-borderless">
       <tbody>
         <tr>
           <th>商品合計</th>
