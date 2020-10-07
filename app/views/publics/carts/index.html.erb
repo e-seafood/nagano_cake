@@ -1,6 +1,8 @@
 <h1>ショッピングカート</h1>
-<%= link_to "カートを空にする", cart_destroy_all_path(@carts), method: :delete, data: {confirm: "カートを空にします。本当に削除してもよろしいですか？"}, class: "btn btn-danger pull-right" %>
-<table class="table">
+<% if @carts.present? %>
+  <%= link_to "カートを空にする", cart_destroy_all_path(@carts), method: :delete, data: {confirm: "本当にカートを空にしてもよろしいですか？"}, class: "btn btn-danger pull-right" %>
+<% end %>
+<table class="table table-bordered">
   <thead>
     <tr class="active">
       <th>商品名</th>
@@ -33,7 +35,7 @@
   </tbody>
 </table>
 <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
-<table class="table">
+<table class="table table-bordered">
   <tr>
     <th class="active">合計金額</th>
     <td><%= amount(@carts) %></td>
