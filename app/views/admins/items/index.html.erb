@@ -1,7 +1,8 @@
 <h3>商品一覧</h3>
-<table>
+<%= link_to "+", new_admins_item_path, class: "btn btn-default pull-right" %>
+<table class="table">
   <thead>
-    <tr>
+    <tr class="active">
       <th>商品ID</th>
       <th>商品名</th>
       <th>税抜価格</th>
@@ -18,7 +19,7 @@
             <%= item.name %>
           <% end %>
         </td>
-        <td><%= item.non_taxed_price %></td>
+        <td><%= item.non_taxed_price.to_s(:delimited) %></td>
         <td><%= item.genre.name %></td>
         <td>
           <% if item.is_active == true %>
