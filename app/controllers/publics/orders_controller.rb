@@ -5,6 +5,7 @@ include ApplicationHelper
 def new
   @carts = Cart.where(public_id: current_public.id)
   if @carts.blank?
+    flash[:alert] = 'カートに商品を追加して下さい。'
     redirect_to carts_path
   end
   @order = Order.new
@@ -39,18 +40,25 @@ end
 def create
   @order = Order.new(order_params)
   @order.public_id = current_public.id
-  @order.save
-  redirect_to thank_orders_path
-  @carts = Cart.where(public_id: current_public.id)
-  @carts.each do |cart|
-    @order_item = OrderItem.new
-    @order_item.item_id = cart.item_id
-    @order_item.order_id = @order.id
-    @order_item.item_count = cart.item_count
-    @order_item.tax_included_price = sub_total(cart)
-    @order_item.save
+  if @order.save
+    redirect_to thank_orders_path
+    @carts = Cart.where(public_id: current_public.id)
+    @carts.each do |cart|
+      @order_item = OrderItem.new
+      @order_item.item_id = cart.item_id
+      @order_item.order_id = @order.id
+      @order_item.item_count = cart.item_count
+      @order_item.tax_included_price = sub_total(cart)
+      @order_item.save
+    end
+    @carts.destroy_all
+  else
+    flash[:alert] = 'お届け先を入力してください'
+    @carts = Cart.where(public_id: current_public.id)
+    @order = Order.new
+    @shippings = Shipping.where(public_id: current_public.id)
+    render :new
   end
-  @carts.destroy_all
 end
 
 def thank

@@ -1,6 +1,7 @@
-<h3>注文情報入力</h3>
+<%= alert %>
+<h1>注文情報入力</h1>
 <%= form_for(@order, url: confirm_orders_path, html: {method: "post"}) do |f| %>
-  <h4>支払方法</h4>
+  <h4><strong>支払方法</strong></h4>
   <div>
     <%= f.radio_button :payment, "クレジットカード", checked: true %>
     <%= f.label :payment, "クレジットカード" %>
@@ -10,7 +11,7 @@
     <%= f.label :payment, "銀行振込" %>
   </div>
 
-  <h4>お届け先</h4>
+  <h4><strong>お届け先</strong></h4>
   <div>
     <%= radio_button_tag(:select_address, "ご自身の住所", checked: true) %>
     <%= label_tag :select_address, "ご自身の住所" %><br>
@@ -20,6 +21,8 @@
   <div>
     <%= radio_button_tag(:select_address, "登録済住所から選択") %>
     <%= label_tag :select_address, "登録済住所から選択" %>
+  </div>
+  <div>
     <%= fields_for @shipping do |f| %>
       <%= f.collection_select :id, @shippings, :id, :shipping_all %>
     <% end %>
@@ -40,5 +43,5 @@
       <td><%= f.text_field :name %></td>
     </tr>
   </table>
-  <%= f.submit "確認画面へ進む" %>
+  <%= f.submit "確認画面へ進む", class: "btn btn-primary center-block" %>
 <% end %>

@@ -1,7 +1,7 @@
 <h3>注文情報確認</h3>
-<table>
+<table class="table table-bordered">
   <thead>
-    <tr>
+    <tr class="active">
       <th>商品名</th>
       <th>単価（税込）</th>
       <th>数量</th>
@@ -15,27 +15,27 @@
           <%= attachment_image_tag cart.item, :image, :fill, 60, 60 %>
           <%= cart.item.name %>
         </td>
-        <td><%= tax(cart.item.non_taxed_price) %></td>
+        <td><%= tax(cart.item.non_taxed_price).to_s(:delimited) %></td>
         <td><%= cart.item_count %></td>
-        <td><%= sub_total(cart) %></td>
+        <td><%= sub_total(cart).to_s(:delimited) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<table>
+<table class="table table-bordered">
   <tr>
-    <td>送料</td>
+    <td class="active">送料</td>
     <td><%= post_age %></td>
   </tr>
   <tr>
-    <td>商品合計</td>
+    <td class="active">商品合計</td>
     <td>
-      <%= items_total(@carts) %>
+      <%= items_total(@carts).to_s(:delimited) %>
     </td>
   </tr>
   <tr>
-    <td>請求金額</td>
-    <td><%= amount(@carts) %></td>
+    <td class="active">請求金額</td>
+    <td><%= amount(@carts).to_s(:delimited) %></td>
   </tr>
 </table>
 <table>
@@ -46,7 +46,7 @@
   <tr>
     <th>お届け先</th>
     <td>
-      <%= @order.postcode %><%= @order.address %><br>
+      〒<%= @order.postcode %><%= @order.address %><br>
       <%= @order.name %>
     </td>
   </tr>
@@ -58,5 +58,5 @@
   <%= f.hidden_field :payment, :value => @order.payment  %>
   <%= f.hidden_field :postage, :value => post_age %>
   <%= f.hidden_field :amount, :value => amount(@carts) %>
-  <%= f.submit "購入を確定する" %>
+  <%= f.submit "購入を確定する", class: "btn btn-success center-block" %>
 <% end %>
