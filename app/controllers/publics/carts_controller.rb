@@ -12,8 +12,13 @@ class Publics::CartsController < ApplicationController
     else
       @cart.item_count += params[:cart][:item_count].to_i
     end
-    @cart.save
-    redirect_to carts_path
+    if @cart.save
+      redirect_to carts_path
+    else
+      flash.now[:alert] = 'カートに追加できませんでした。個数を選択してください。'
+      @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+      render :index
+    end
   end
 
   def update
