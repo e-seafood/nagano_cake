@@ -12,14 +12,24 @@ class Publics::CartsController < ApplicationController
     else
       @cart.item_count += params[:cart][:item_count].to_i
     end
-    @cart.save
-    redirect_to carts_path
+    if @cart.save
+      redirect_to carts_path
+    else
+      flash.now[:alert] = '個数を選択してください。'
+      @item = Item.find(params[:cart][:item_id])
+      @cart = Cart.new
+      render 'publics/items/show'
+    end
   end
 
   def update
     @cart = Cart.find_by(id: params[:id])
-    @cart.update(cart_params)
-    redirect_to carts_path
+    if @cart.update(cart_params)
+      redirect_to carts_path
+    else
+      @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+      render :index
+    end
   end
 
   def destroy
