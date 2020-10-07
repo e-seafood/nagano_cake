@@ -8,7 +8,7 @@
   <div class="col-xs-4">
     <h3><%= @item.name %></h3>
     <p><%= @item.explanation %></p>
-    ¥<%= tax(@item.non_taxed_price) %>（税込）
+    ¥<%= tax(@item.non_taxed_price).to_s(:delimited) %>（税込）
     <%= form_for(@cart, url: carts_path) do |f| %>
       <%= f.hidden_field :item_id, :value => @item.id %>
       <%= f.select :item_count, options_for_select((1..9).to_a), include_blank: "個数選択" %>

@@ -14,7 +14,7 @@
         <%= attachment_image_tag item, :image, :fill, 150, 100 %>
         <% end %>
       <p><strong><%= item.name %></strong></p>
-      <p><strong>￥<%= tax(item.non_taxed_price) %></strong></p>
+      <p><strong>￥<%= tax(item.non_taxed_price).to_s(:delimited) %></strong></p>
       </div>
     <% end %>
   </div>

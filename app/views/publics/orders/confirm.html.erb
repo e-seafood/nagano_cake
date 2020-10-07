@@ -15,9 +15,9 @@
           <%= attachment_image_tag cart.item, :image, :fill, 60, 60 %>
           <%= cart.item.name %>
         </td>
-        <td><%= tax(cart.item.non_taxed_price) %></td>
+        <td><%= tax(cart.item.non_taxed_price).to_s(:delimited) %></td>
         <td><%= cart.item_count %></td>
-        <td><%= sub_total(cart) %></td>
+        <td><%= sub_total(cart).to_s(:delimited) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,12 +30,12 @@
   <tr>
     <td class="active">商品合計</td>
     <td>
-      <%= items_total(@carts) %>
+      <%= items_total(@carts).to_s(:delimited) %>
     </td>
   </tr>
   <tr>
     <td class="active">請求金額</td>
-    <td><%= amount(@carts) %></td>
+    <td><%= amount(@carts).to_s(:delimited) %></td>
   </tr>
 </table>
 <table>
