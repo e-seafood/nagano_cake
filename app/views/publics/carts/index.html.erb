@@ -20,17 +20,6 @@
         <td><%= tax(cart.item.non_taxed_price) %></td>
         <td>
           <%= form_for(cart, url:cart_path(cart)) do |f| %>
-            <% if cart.errors.any? %>
-              <div>
-                <h2><%= cart.errors.count %>件のエラーが発生しました。</h2>
-                <ul>
-                <% cart.errors.full_messages.each do |message| %>
-                  <li>error</li>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
-            <% end %>
             <%= f.text_field :item_count, :value => cart.item_count %>
             <%= f.submit "変更" %>
           <% end %>
