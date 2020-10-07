@@ -4,9 +4,9 @@
   </div>
   <div class="col-xs-8">
     <% if params[:id] %>
-      <h3><%= @genre.name %>一覧（全<%= @items.count %>件）</h3>
+      <h1><%= @genre.name %>一覧（全<%= @items.count %>件）</h1>
     <% else %>
-      <h3>商品一覧（全<%= @items.count %>件）</h3>
+      <h1>商品一覧（全<%= @items.count %>件）</h1>
     <% end %>
     <% @items.each do |item| %>
       <div>
