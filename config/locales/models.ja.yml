@@ -11,5 +11,5 @@ ja:
         postcode: 郵便番号
         address: 住所
         tel: 電話番号
-        password_confirmation: 確認用パスワード
+        password_confirmation: 確認モード
         remember_me: 次回から自動的にログイン
