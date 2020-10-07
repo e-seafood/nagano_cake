@@ -11,6 +11,7 @@ def index
 end
 
 def show
+  @genres = Genre.where(is_active: true)
   @item = Item.find(params[:id])
   @cart = Cart.new
 end

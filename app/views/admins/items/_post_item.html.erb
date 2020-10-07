@@ -1,4 +1,14 @@
 <%= form_for(item, url: path) do |f| %>
+  <% if item.errors.any? %>
+    <div>
+      <h2><%= item.errors.count %>件のエラーが発生しました。</h2>
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div>
     <%= f.attachment_field :image %>
   </div>
@@ -22,5 +32,5 @@
     <%= f.label :is_active, "販売ステータス" %>
     <%= f.select :is_active, [["販売中", true], ["売切れ", false]], include_blank: "--選択してください--" %>
   </div>
-  <%= f.submit item.new_record?? "新規登録" : "変更を保存" %>
+  <%= f.submit item.new_record?? "新規登録" : "変更を保存", class: "btn btn-primary pull-right" %>
 <% end %>
