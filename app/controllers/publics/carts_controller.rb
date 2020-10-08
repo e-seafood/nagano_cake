@@ -1,7 +1,9 @@
 class Publics::CartsController < ApplicationController
 
+  before_action :authenticate_public!
+
   def index
-    @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+    @carts = Cart.where(public_id: current_public.id).order(:item_id)
   end
 
   def create

@@ -40,6 +40,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root 'orders#top'
+    get '/search' => 'search#search'
     resources :publics, only: [:index, :edit, :show, :update]
     resources :items, only: [:index, :create, :new, :edit, :show, :update]
     resources :orders, only: [:index, :show, :update]
