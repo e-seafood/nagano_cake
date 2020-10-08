@@ -1,15 +1,20 @@
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-6">
+				<br><div class="headline"><h2>配送先登録/一覧</h2></div>
+			</div>
+		</div>
+	</div>
 
-<h2>配送先登録/一覧</h2>
-<% if @shippings.errors.any? %>
-  <div id="error_explanation">
-  	<h3><%= pluralize(@shippings.errors.count, "error") %>prohibited this obj from being saved:</h3>
-  	  <ul>
-  	  	<% @shippings.errors.full_messages.each do |message| %>
-  	  	  <li><%= message %></li>
-  	  	<% end %>
-  	  </ul>
-  </div>
-<% end %>
+	<% if @shipping.errors.any? %>
+	  <div id="error_explanation">
+	  		<% @shipping.errors.full_messages.each do |message| %>
+	  		  <li><%= message %></li>
+	  		<% end %>
+	  </div>
+	<% end %>
+
 
   <table>
     <%= form_for(@shipping) do |f| %>
@@ -46,8 +51,10 @@
 			  	<td><%= shipping.address %></td>
 			  	<td><%= shipping.name %></td>
 			  	<td><%= link_to '編集する', edit_shipping_path(shipping),class:"btn btn-primary" %>
-				    <%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-danger" %></td>
+				    <%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-danger" %>
+				</td>
 			  </tr>
 			<% end %>
 		</tbody>
     </table>
+</div>

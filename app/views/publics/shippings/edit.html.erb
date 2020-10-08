@@ -1,14 +1,19 @@
-<h2>配送先編集</h2>
-<% if @shippings.errors.any? %>
-  <div id="error_explanation">
-  	<h3><%= pluralize(@shippings.errors.count, "error") %>prohibited this obj from being saved:</h3>
-  	  <ul>
-  	  	<% @shippings.errors.full_messages.each do |message| %>
-  	  	  <li><%= message %></li>
-  	  	<% end %>
-  	  </ul>
+<div class="edit-shipping">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-6">
+        <br><div class="headline"><h2>配送先編集</h2></div>
+      </div>
+    </div>
   </div>
-<% end %>
+
+  <% if @shipping.errors.any? %>
+    <div id="error_explanation">
+        <% @shipping.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+    </div>
+  <% end %>
 
     <table>
     	<%= form_for(@shipping) do |f| %>
@@ -29,5 +34,6 @@
 		</tr>
 	    <% end %>
 	</table>
+</div>
 
 

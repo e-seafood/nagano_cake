@@ -11,8 +11,8 @@ class Publics::ShippingsController < ApplicationController
 		if   @shipping.save
 		     redirect_to shippings_path
 		else
+			@shippings = Shipping.where(public_id: current_public.id)
 		 	render "index"
-		 	flash[:notice] = "登録出来ませんでした"
 		end
 	end
 
@@ -23,10 +23,8 @@ class Publics::ShippingsController < ApplicationController
 	def update
 		@shipping = Shipping.find(params[:id])
 		if  @shipping.update(shipping_params)
-			flash[:success] = "更新に成功しました"
 		    redirect_to shippings_path
 		else
-			flash[:warning] = "入力内容を確認してください"
 			render 'edit'
 		end
 	end
