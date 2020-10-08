@@ -16,28 +16,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.main{
+.main {
 	position: relative;
 	border: 1px solid;
 	min-height: 700px;
 }
-.navbar{
+
+.navbar {
 	border-bottom: 1px solid;
 }
-.publis_name{
+
+.publis_name {
 	padding: 15px;
 }
-#table-borderless > thead > tr > th,
-.table-borderless > tbody > tr > td,
-.table-borderless > tbody > tr > th {
+
+#table-borderless>thead>tr>th,
+#table-borderless>tbody>tr>td,
+#table-borderless>tbody>tr>th {
 	border: none;
 	padding: 5px;
 }
-.header{
+
+.header {
 	border: 1px solid;
 	border-bottom: none;
 }
-.footer{
+
+.footer {
 	border: 1px solid;
 	border-top: none;
 	padding-bottom: 50px;
