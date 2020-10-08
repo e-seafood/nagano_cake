@@ -1,6 +1,8 @@
 class Admins::OrdersController < ApplicationController
 
 	def top
+		#今日のオーダーを取得
+		@oders = Order.where("created_at >= ?", Date.today)
 	end
 
 	def index

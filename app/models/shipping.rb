@@ -5,4 +5,8 @@ class Shipping < ApplicationRecord
     self.postcode + self.address + self.name
   end
 
+  validates :postcode, presence: true, length: {maximum: 7}
+  validates :address, presence: true
+  validates :name, presence: true
+
 end
