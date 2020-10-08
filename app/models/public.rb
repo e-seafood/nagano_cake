@@ -17,6 +17,7 @@ class Public < ApplicationRecord
             }
   validates :postcode, format:{with:/\A\d{7}\z/}
   validates :tel, format:{with:/\A\d{10,11}\z/}
+  validates :last_name, :first_name, :address, presence: true
 
   #会員ステータスが退会済みならtrueを返すメゾット、退会済みユーザーのログインを弾く際に使用します。
   def active_for_authentication?

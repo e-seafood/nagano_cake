@@ -2,9 +2,9 @@
 <div>
   <% if @order.present? %>
 			<strong>注文情報</strong>
-				<table>
+				<table class="table table-bordered">
           <tbody>
-              <tr>
+              <tr class="active">
                 <th>注文日</th>
 								<td><%= l @order.created_at, format: :short %></td>
               </tr>
@@ -29,10 +29,10 @@
 
     <div>
       <strong>請求情報</strong>
-				<table>
-            <tr>
+				<table class="table table-bordered">
+            <tr class="active">
               <th>商品合計</th>
-              <td><%= items_total(@carts).to_s(:delimited) %>円</td>
+              <td><%= items_total(@order_items).to_s(:delimited) %>円</td>
             </tr>
             <tr>
               <th>配送料</th>
@@ -40,15 +40,15 @@
             </tr>
             <tr>
               <th>ご請求金額</th>
-              <td><%= amount(@carts).to_s(:delimited) %>円</td>
+              <td><%= amount(@order_items).to_s(:delimited) %>円</td>
             </tr>
         </table>
     </div>
     <div>
 			<strong>注文内容</strong>
-        <table>
+        <table class="table table-bordered">
 					<thead>
-					<tr>
+					<tr class="active">
 						<th>商品</th>
 						<th>単価(税込)</th>
 						<th>個数</th>

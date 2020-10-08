@@ -65,15 +65,14 @@ class Publics::OrdersController < ApplicationController
 
   def thank
   end
+  
+  def show
+    @order = Order.find(params[:id])
+    @order_items = @order.order_items
+  end
 
   def index
   	@orders = current_public.orders
-  end
-
-  def show
-    @order = Order.find(params[:id])
-    @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
-  	@order_items = @order.order_items
   end
 
   private
