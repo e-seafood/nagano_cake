@@ -21,7 +21,9 @@
 	border: 1px solid;
 	min-height: 700px;
 }
-
+.row{
+	margin: 0 auto;
+}
 .navbar {
 	border-bottom: 1px solid;
 }
@@ -37,7 +39,27 @@
 	padding: 5px;
 }
 
-.header {
+.table-strong > tbody > tr > td,
+.table-strong > tbody > tr > th{
+	font-size: 16px;
+}
+
+.text_rigth{
+	text-align: right;
+}
+.flax-main{
+	display: flex;
+	align-content: flex-end;
+}
+.flex-bottom{
+	display: flex;
+	align-items: flex-end;
+}
+.form-control{
+	width: auto;
+	display: inline-block;
+}
+.header{
 	border: 1px solid;
 	border-bottom: none;
 }
