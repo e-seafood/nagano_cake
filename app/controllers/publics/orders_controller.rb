@@ -70,7 +70,6 @@ end
 
 def show
   @order = Order.find(params[:id])
-  @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
 	@order_items = @order.order_items
 end
 
