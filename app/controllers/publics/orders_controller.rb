@@ -72,7 +72,7 @@ class Publics::OrdersController < ApplicationController
   end
 
   def index
-  	@orders = current_public.orders
+  	@orders = current_public.orders.page(params[:page]).per(5)
   end
 
   private

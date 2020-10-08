@@ -8,7 +8,7 @@ before_action :authenticate_admin!
 	end
 
 	def index
-		@orders = Order.all
+		@orders = Order.all.page(params[:page])
 	end
 
 	def show

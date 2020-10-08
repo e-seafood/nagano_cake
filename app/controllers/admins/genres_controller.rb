@@ -3,7 +3,7 @@ class Admins::GenresController < ApplicationController
 before_action :authenticate_admin!
 
 	def index
-		@genres = Genre.all
+		@genres = Genre.all.page(params[:page])
 		@genre = Genre.new
 	end
 
@@ -12,8 +12,8 @@ before_action :authenticate_admin!
 		if 	@genre.save
 			redirect_to request.referer
 		else
+			@genres = Genre.all.page(params[:page])
 			render "index"
-			flash[:notice] = "登録できませんでした"
 		end
 	end
 
