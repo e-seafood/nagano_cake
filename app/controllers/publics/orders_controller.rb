@@ -1,5 +1,7 @@
 class Publics::OrdersController < ApplicationController
 
+  before_action :authenticate_public!
+
   include ApplicationHelper
 
   def new
