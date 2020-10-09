@@ -16,16 +16,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.main {
-	position: relative;
-	border: 1px solid;
-	min-height: 700px;
+body{
+	background-color: #eee7e0;
+	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
-.row{
-	margin: 0 auto;
+
+.top-main {
+	height: 500px;
+	background-image: url(cup_cake.jpg);
+	background-size: cover;
 }
-.navbar {
-	border-bottom: 1px solid;
+
+a {
+	color: black;
+	textdecoration: none;
+}
+
+.genre-search {
+	margin-top: 80px;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.nav > li > a {
+  display: block;
+  padding: 30px 20px;
 }
 
 .publis_name {
@@ -47,25 +64,23 @@
 .text_rigth{
 	text-align: right;
 }
+
 .flax-main{
 	display: flex;
 	align-content: flex-end;
 }
+
 .flex-bottom{
 	display: flex;
 	align-items: flex-end;
 }
+
 .form-control{
 	width: auto;
 	display: inline-block;
 }
-.header{
-	border: 1px solid;
-	border-bottom: none;
-}
 
 .footer {
-	border: 1px solid;
 	border-top: none;
 	padding-bottom: 50px;
 }

@@ -11,35 +11,33 @@
 
   <body>
     <div class="container header">
-
-        <header class="navbar">
-          <nav class="nav navbar-nav navbar-left">
-            <%= link_to root_path do %>
-              <%= image_tag "ho-ruke-ki.jpg", :size =>'200x55' %>
-            <% end %>
-          </nav>
-          <nav>
-            <ul class="nav navbar-nav navbar-right">
-              <% if public_signed_in? %>
-                <%= render "layouts/header_login" %>
+      <header class="navbar">
+        <nav class="nav navbar-nav navbar-left">
+          <%= link_to root_path do %>
+            <%= image_tag "nagano_cake.png", :size =>'200x82' %>
+          <% end %>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if public_signed_in? %>
+              <%= render "layouts/header_login" %>
+            <% else %>
+              <% if admin_signed_in? %>
+                <%= render "layouts/header_admin" %>
               <% else %>
-                <% if admin_signed_in? %>
-                  <%= render "layouts/header_admin" %>
-                <% else %>
-                  <%= render "layouts/header_no_login" %>
-                <% end %>
+                <%= render "layouts/header_no_login" %>
               <% end %>
-            </ul>
-          </nav>
-        </header>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
     </div>
-    <div class="container main">
+    <div class="container-main">
       <%= yield %>
-    </div>
     </div>
     <div class="container">
       <footer class="row footer"></footer>
-  </div>
+    </div>
   </body>
 </html>
 

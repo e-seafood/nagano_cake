@@ -4,7 +4,7 @@ before_action :authenticate_admin!
 
 	def top
 		#今日のオーダーを取得
-		@oders = Order.where("created_at >= ?", Date.today)
+		@oders = Order.where("created_at >= ?", Date.today).count
 	end
 
 	def index
