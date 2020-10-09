@@ -1,5 +1,4 @@
 class Publics::CartsController < ApplicationController
-
   before_action :authenticate_public!
 
   def index
@@ -46,8 +45,8 @@ class Publics::CartsController < ApplicationController
   end
 
   private
+
   def cart_params
     params.require(:cart).permit(:public_id, :item_id, :item_count)
   end
-
 end

@@ -1,5 +1,4 @@
 class Publics::OrdersController < ApplicationController
-
   before_action :authenticate_public!
 
   include ApplicationHelper
@@ -22,7 +21,7 @@ class Publics::OrdersController < ApplicationController
       @order.address = current_public.address
       @order.name = current_public.last_name + current_public.first_name
     elsif params[:select_address] == "登録済住所から選択"
-      @shipping =  Shipping.find(params[:id])
+      @shipping = Shipping.find(params[:id])
       @order.postcode = @shipping.postcode
       @order.address = @shipping.address
       @order.name = @shipping.name
@@ -65,19 +64,19 @@ class Publics::OrdersController < ApplicationController
 
   def thank
   end
-  
+
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items
   end
 
   def index
-  	@orders = current_public.orders
+    @orders = current_public.orders
   end
 
   private
-  def order_params
-  	params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
-  end
 
+  def order_params
+    params.require(:order).permit(:public_id, :status, :postcode, :address, :name, :payment, :postage, :amount)
+  end
 end
