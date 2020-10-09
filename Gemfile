@@ -72,5 +72,5 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-# kaminariの追加
 gem 'kaminari','~> 1.2.1'
+gem 'rubocop-airbnb'
