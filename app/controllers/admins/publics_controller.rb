@@ -3,7 +3,7 @@ class Admins::PublicsController < ApplicationController
 before_action :authenticate_admin!
 
 	def index
-		@publics = Public.all
+		@publics = Public.all.page(params[:page])
 	end
 
 	def show
