@@ -1,3 +1,41 @@
 // Place all the styles related to the publics/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// new //
+
+.order h4 {
+  margin-top: 40px;
+}
+
+.address {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  text-align: center;
+}
+
+
+// confirm //
+
+.confirm-all {
+  padding-top: 50px;
+}
+
+.confirm-all h3 {
+  margin-bottom: 30px;
+}
+
+.price-table {
+  margin-top: 77px;
+}
+
+#tr {
+  margin-bottom: 10px;
+}
+
+// thank //
+.thank {
+  padding-top: 200px;
+}

@@ -1,3 +1,38 @@
 // Place all the styles related to the publics/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index //
+
+.index-title {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.index-item-detail {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+
+// show //
+
+.item-box {
+  margin: 100px auto;
+}
+
+.item-detail {
+  padding-top: 20px;
+}
+
+.item-detail h3 {
+  margin-bottom: 30px;
+}
+
+.item-detail p {
+  margin-bottom: 30px;
+}
+
+.item-price {
+  margin-bottom: 30px;
+}
