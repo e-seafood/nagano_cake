@@ -1,8 +1,8 @@
 
 #環境変数に時間があったら
 Admin.create!(
-	email: "gyokairui@team",
-	password: "gyogyo"
+	email: ENV['admin_email'],
+	password: ENV['admin_password']
 	)
 
 10.times do |n|

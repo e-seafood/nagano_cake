@@ -74,3 +74,4 @@ gem 'devise-i18n-views'
 
 gem 'kaminari','~> 1.2.1'
 gem 'rubocop-airbnb'
+gem 'dotenv-rails'
