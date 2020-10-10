@@ -16,16 +16,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	font-family: 'Noto Serif JP', serif;
+}
+
 .main {
-	position: relative;
-	border: 1px solid;
-	min-height: 700px;
+	min-height: 580px;
 }
 .row{
 	margin: 0 auto;
-}
-.navbar {
-	border-bottom: 1px solid;
 }
 
 .publis_name {
@@ -59,13 +58,46 @@
 	width: auto;
 	display: inline-block;
 }
-.header{
-	border: 1px solid;
-	border-bottom: none;
-}
 
-.footer {
-	border: 1px solid;
-	border-top: none;
-	padding-bottom: 50px;
+.top-image{
+	height: 320px;
+	background-image: url(flower.jpg);
+	background-size: cover;
+	padding: 0;
+}
+.pick-up-box{
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.pick-up {
+	padding: 0;
+}
+.pick-up-title{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.pick-up p{
+	margin-top: 5px;
+}
+.navbar {
+	margin: 0;
+}
+.pick-up-item {
+	padding: 0;
+}
+a {
+	color: black;
+}
+.genre-search {
+	margin-right: 20px;
+	margin-top: 50px;
+}
+.container {
+	width: 1300px;
+}
+.top-text {
+	background-color: rgba(255,255,255,0.5)
+}
+.top-text p {
+	font-weight: bold;
 }
