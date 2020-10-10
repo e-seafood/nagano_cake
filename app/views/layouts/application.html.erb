@@ -7,15 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
+    </style>
   </head>
 
   <body>
     <div class="container header">
-
+      <div class="row">
         <header class="navbar">
           <nav class="nav navbar-nav navbar-left">
             <%= link_to root_path do %>
-              <%= image_tag "ho-ruke-ki.jpg", :size =>'200x55' %>
+              <%= image_tag "logo.jpg", :size =>'180x70' %>
             <% end %>
           </nav>
           <nav>
@@ -32,6 +35,7 @@
             </ul>
           </nav>
         </header>
+      </div>
     </div>
     <div class="container main">
       <%= yield %>
@@ -39,7 +43,7 @@
     </div>
     <div class="container">
       <footer class="row footer"></footer>
-  </div>
+    </div>
   </body>
 </html>
 
