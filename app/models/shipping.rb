@@ -5,7 +5,7 @@ class Shipping < ApplicationRecord
     self.postcode + self.address + self.name
   end
 
-  validates :postcode, presence: true, length: {maximum: 7}
+  validates :postcode, presence: true, format:{with:/\A\d{7}\z/}
   validates :address, presence: true
   validates :name, presence: true
 
