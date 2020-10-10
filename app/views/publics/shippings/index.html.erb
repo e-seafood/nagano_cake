@@ -9,9 +9,12 @@
 
 	<% if @shipping.errors.any? %>
 	  <div id="error_explanation">
+	  	<h2><%= @shipping.errors.count %>件のエラーが発生しました。</h2>
+	  	<ul>
 	  		<% @shipping.errors.full_messages.each do |message| %>
 	  		  <li><%= message %></li>
 	  		<% end %>
+	  	</ul>
 	  </div>
 	<% end %>
 
@@ -29,12 +32,16 @@
 	  <tr>
 		<td><%= f.label :name, "宛名" %></td>
 		<td><%= f.text_field :name %></td>
-		<td><%= f.submit '登録',class:"btn btn-success" %></td>
+		<td><%= f.submit '登録する',class:"btn btn-success" %></td>
 	  </tr>
     <% end %>
   </table>
+  <br>
+  <br>
 
 <div class="container">
+	<div class="row">
+		<div class="col-xs-9">
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -51,7 +58,7 @@
 			  	<td><%= shipping.address %></td>
 			  	<td><%= shipping.name %></td>
 			  	<td><%= link_to '編集する', edit_shipping_path(shipping),class:"btn btn-primary" %>
-				    <%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-danger" %>
+				    <%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に削除してよろしいですか？",class:"btn btn-danger" %>
 				</td>
 			  </tr>
 			<% end %>
