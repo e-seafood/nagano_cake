@@ -1,5 +1,5 @@
 $(".select_status").val("");
-$("#status").html("<%= j(render 'admins/orders/update_status', order: @order) %>");
 $(".making_status").html("<%= j(render 'admins/orders/update_making_status', order: @order) %>");
+$("#status").html("<%= j(render 'admins/orders/update_status', order: @order) %>");
 $(".status-btn").removeAttr('data-disable-with')
 
