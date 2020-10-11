@@ -21,7 +21,7 @@
   	  	</tr>
   	  		<th>注文ステータス</th>
   	  		<td id="status">
-            <%= render"admins/orders/update_status",order: @order %>
+            <%= render"admins/orders/update_status",order:@order %>
           </td>
   	  	</tr>
       </tbody>
@@ -42,7 +42,9 @@
   	  </tr>
   	</thead>
   	<tbody class="making_status">
-  	  <%= render"admins/orders/update_making_status",order: @order %>
+
+  	  <%= render"admins/orders/update_making_status",order: @order  %>
+
   	</tbody>
   </table>
   </div>
@@ -65,4 +67,5 @@
     </table>
   </div>
 </div>
+
 
