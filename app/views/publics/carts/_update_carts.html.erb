@@ -1,0 +1,40 @@
+<table class="table table-bordered">
+  <thead>
+    <tr class="active">
+      <th>商品名</th>
+      <th>単価（税込）</th>
+      <th>数量</th>
+      <th>小計</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% carts.each do |cart| %>
+      <tr>
+        <td>
+          <%= attachment_image_tag cart.item, :image, :fill, 80, 50 %>
+          <%= cart.item.name %>
+        </td>
+        <td><%= tax(cart.item.non_taxed_price).to_s(:delimited) %></td>
+        <td >
+          <%= form_with(model:cart, url:cart_path(cart)) do |f| %>
+            <%= f.text_field :item_count, :value => cart.item_count,class:"items-update" %>
+            <%= f.submit "変更" %>
+          <% end %>
+        </td>
+        <td><%= sub_total(cart).to_s(:delimited) %></td>
+        <td>
+          <%= link_to "削除する", cart_path(cart), method: :delete, data: {confirm: "#{cart.item.name}を削除します。本当に削除してよろしいですか？"}, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+<table class="table table-bordered">
+  <tr class="items-total">
+    <th class="active">合計金額</th>
+    <td><%= items_total(carts).to_s(:delimited) %></td>
+  </tr>
+</table>
