@@ -16,7 +16,7 @@ before_action :authenticate_admin!
         		@order_item.order.update(status: "発送準備中")
       		end
     	end
-			redirect_to request.referer
+      @order = @order_item.order
 	end
 private
 	def order_item_params
