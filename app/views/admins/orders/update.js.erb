@@ -1,9 +1,5 @@
-$('.select_status').submit(function() {
-	$(".select_status").val("");
-	$("#status").html("<%= j(render 'admins/orders/update_status', order: @order) %>");
-	$(".making_status").html("<%= j(render 'admins/orders/update_making_status', order: @order) %>");
-	$(".status-btn").removeAttr('data-disable-with')
-	return false;
-});
-
+$(".select_status").val("");
+$("#status").html("<%= j(render 'admins/orders/update_status', order: @order) %>");
+$(".making_status").html("<%= j(render 'admins/orders/update_making_status', order: @order) %>");
+$(".status-btn").removeAttr('data-disable-with')
 

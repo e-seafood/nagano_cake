@@ -1,7 +1,5 @@
-$('.select_making_status').submit(function() {
-	$(".select_making_status").val("");
-	$(".making_status").html("<%= j(render 'admins/orders/update_making_status', order: @order) %>");
-	$("#status").html("<%= j(render 'admins/orders/update_status', order: @order) %>");
-	return false;
-});
+$(".select_making_status").val("");
+$(".making_status").html("<%= j(render 'admins/orders/update_making_status', order: @order) %>");
+$("#status").html("<%= j(render 'admins/orders/update_status', order: @order) %>");
+$(".making-status-btn").removeAttr('data-disable-with')
 
