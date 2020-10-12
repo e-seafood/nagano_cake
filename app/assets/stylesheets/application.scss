@@ -23,7 +23,8 @@ body {
 .main {
 	min-height: 580px;
 }
-.row{
+
+.row {
 	margin: 0 auto;
 }
 
@@ -38,66 +39,105 @@ body {
 	padding: 5px;
 }
 
-.table-strong > tbody > tr > td,
-.table-strong > tbody > tr > th{
+.table-strong>tbody>tr>td,
+.table-strong>tbody>tr>th {
 	font-size: 16px;
 }
 
-.text_rigth{
+.text_rigth {
 	text-align: right;
 }
-.flax-main{
+
+.flax-main {
 	display: flex;
 	align-content: flex-end;
 }
-.flex-bottom{
+
+.flex-bottom {
 	display: flex;
 	align-items: flex-end;
 }
-.form-control{
+
+.form-control {
 	width: auto;
 	display: inline-block;
 }
 
-.top-image{
+.top-image {
 	height: 320px;
 	background-image: url(flower.jpg);
 	background-size: cover;
 	padding: 0;
 }
-.pick-up-box{
+
+.pick-up-box {
 	margin-top: 15px;
 	margin-left: 20px;
 }
+
 .pick-up {
 	padding: 0;
 }
-.pick-up-title{
+
+.pick-up-title {
 	margin-bottom: 20px;
 	font-size: 20px;
 }
-.pick-up p{
+
+.pick-up p {
 	margin-top: 5px;
 }
+
 .navbar {
 	margin: 0;
 }
+
 .pick-up-item {
 	padding: 0;
 }
+
 a {
 	color: black;
 }
+
 .genre-search {
 	margin-right: 20px;
 	margin-top: 50px;
 }
+
 .container {
 	width: 1300px;
+	padding: 0;
 }
+
 .top-text {
-	background-color: rgba(255,255,255,0.5)
+	background-color: rgba(255, 255, 255, 0.5)
 }
+
 .top-text p {
 	font-weight: bold;
+}
+
+.session1 {
+	margin-top: 150px;
+}
+
+.login1 {
+	margin-bottom: 50px;
+}
+
+.sign-up {
+	margin-top: 80px;
+}
+
+.sign-up1 {
+	margin-bottom: 50px;
+}
+
+.passedit {
+	margin-bottom: 50px;
+}
+
+.adminlog {
+	margin-bottom: 50px;
 }

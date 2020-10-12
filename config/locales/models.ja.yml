@@ -21,3 +21,14 @@ ja:
                 name: 名前
                 postcode: 郵便番号
                 address: 住所
+
+ja:
+  activerecord:
+    attributes:
+      item:
+        image: 商品画像
+        name: 商品名
+        explanation: 商品説明
+        genre: ジャンル
+        non_taxed_price: 税抜価格
+        is_active: 販売ステータス

@@ -1,7 +1,7 @@
 <div class="main">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-offset-1 col-sm-6">
+			<div class="col-xs-10 col-sm-offset-1">
 				<br><div class="headline"><h2>配送先登録/一覧</h2></div>
 			</div>
 		</div>
@@ -18,33 +18,38 @@
 	  </div>
 	<% end %>
 
-
-  <table>
-    <%= form_for(@shipping) do |f| %>
-	  <tr>
-		<td><%= f.label :postcode, "郵便番号(ハイフンなし)" %></td>
-		<td><%= f.text_field :postcode %></td>
-	  </tr>
-	  <tr>
-		<td><%= f.label :address, "住所" %></td>
-		<td><%= f.text_field :address, :size => 60 %></td>
-	  </tr>
-	  <tr>
-		<td><%= f.label :name, "宛名" %></td>
-		<td><%= f.text_field :name %></td>
-		<td><%= f.submit '登録する',class:"btn btn-success" %></td>
-	  </tr>
-    <% end %>
-  </table>
-  <br>
-  <br>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+		  <table>
+		    <%= form_for(@shipping) do |f| %>
+			  <tr>
+				<td><%= f.label :postcode, "郵便番号(ハイフンなし)" %></td>
+				<td><%= f.text_field :postcode %></td>
+			  </tr>
+			  <tr>
+				<td><%= f.label :address, "住所" %></td>
+				<td><%= f.text_field :address, :size => 60 %></td>
+			  </tr>
+			  <tr>
+				<td><%= f.label :name, "宛名" %></td>
+				<td><%= f.text_field :name %></td>
+				<td><%= f.submit '登録する',class:"btn btn-success" %></td>
+			  </tr>
+		    <% end %>
+		  </table>
+		  <br>
+		  <br>
+		</div>
+	</div>
+</div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-9">
-	<table class="table table-bordered">
+		<div class="col-xs-10">
+	<table class="table table-bordered table-hover">
 		<thead>
-			<tr>
+			<tr class="info">
 				<th>郵便番号</th>
 				<th>住所</th>
 				<th>宛名</th>
