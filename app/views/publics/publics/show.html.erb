@@ -1,7 +1,10 @@
-	<h2>マイページ</h2>
-	<h3>登録情報</h3>
-			<%= link_to " 編集する", edit_publics_path, class: "" %>
-			<%= link_to " パスワードを変更する", edit_public_registration_path, class: "" %>
+	<div class = "row">
+	<div class="mypage col-xs-offset-1 col-xs-8">
+	<h2 class = "mypage2">マイページ</h2>
+	
+			<p><strong class = infomation>登録情報</strong>
+			<%= link_to " 編集する", edit_publics_path, class: "glyphicon btn btn-success" %>
+			<%= link_to " パスワードを変更する", edit_public_registration_path, class: "glyphicon btn btn-warning" %></p>
 
 			<table class="table" >
 				<tbody>
@@ -32,9 +35,10 @@
 				</tbody>
 			</table>
 
-			<div class="">
-				<h3>配送先</h3>
-					<%= link_to " 一覧を見る", shippings_path, class:"" %>
-				<h3>注文履歴</h3>
-					<%= link_to " 一覧を見る", orders_path, class: ""%>
-			</div>
+				<h3 class="mypage3">配送先</h3>
+					<%= link_to " 一覧を見る", shippings_path, class:"shiplook glyphicon btn btn-info" %>
+				<br><br>
+				<h3 class="mypage4">注文履歴</h3>
+					<%= link_to " 一覧を見る", orders_path, class: "glyphicon btn btn-info"%>
+	</div>
+	</div>
