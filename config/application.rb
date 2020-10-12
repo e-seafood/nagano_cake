@@ -18,5 +18,6 @@ module NaganoCake
     #日本時間に変更
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+    config.action_view.automatically_disable_submit_tag = false
   end
 end

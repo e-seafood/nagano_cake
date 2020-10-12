@@ -12,7 +12,7 @@
   	  	  <td>
             <%= link_to admins_public_path(@order.public) do %>
               <%= @order.public.last_name %> <%= @order.public.first_name %>
-            <% end %>
+            <% end %> 
           </td>
   	  	</tr>
   	  	<tr>
@@ -23,12 +23,9 @@
   	  	  <th>支払方法</th>
   	  	  <td><%= @order.payment %></td>
   	  	</tr>
-  	  		<th >注文ステータス</th>
-  	  		<td>
-            <%= form_for(@order, url:admins_order_path(@order)) do |f| %>
-              <%= f.select :status, Order.statuses.keys,{}, class:"form-control form-inline" %>
-              <span class="link-hover"><%= f.submit "更新",class:"btn" %></span>
-            <% end %>
+  	  		<th>注文ステータス</th>
+  	  		<td id="status">
+            <%= render"admins/orders/update_status",order:@order %>
           </td>
   	  	</tr>
       </tbody>
@@ -48,26 +45,8 @@
   	  	<th colspan="2"></th>
   	  </tr>
   	</thead>
-  	<tbody>
-  	  <% @order.order_items.each do |order_item| %>
-  	    <tr>
-  	  	  <td><%= order_item.item.name %></td>
-  	  	  <td><%= tax(order_item.item.non_taxed_price) %></td>
-  	  	  <td><%= order_item.item_count %></td>
-  	  	  <td><%= sub_total(order_item) %></td>
-  	  	  <td>
-            <%= form_for(order_item, url:admins_order_item_path(order_item)) do |f| %>
-              <%= f.select :making_status, OrderItem.making_statuses.keys,{}, class:"form-control" %>
-          </td>
-          <td>
-            <span class="link-hover">
-              <%= f.submit "更新" ,class:"btn" %>
-            </span>
-          </td>
-            <% end %>
-          </td>
-  	    </tr>
-  	  <% end %>
+  	<tbody class="making_status">
+  	  <%= render"admins/orders/update_making_status",order: @order  %>
   	</tbody>
   </table>
   </div>
@@ -90,4 +69,5 @@
     </table>
   </div>
 </div>
+
 

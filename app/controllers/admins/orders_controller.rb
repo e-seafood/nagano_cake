@@ -20,7 +20,6 @@ before_action :authenticate_admin!
 		@order.update(order_params)
 		if 	@order.status == "入金確認"
 			@order.order_items.update(making_status: "製作待ち")
-  			redirect_to request.referer
   		else
   			redirect_to request.referer
   		end
