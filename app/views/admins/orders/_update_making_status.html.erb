@@ -9,7 +9,7 @@
 
         <%= f.select :making_status, OrderItem.making_statuses.keys,{}, class:"form-control select_making_status" %>
 
-        <%= f.submit "更新" ,class:"btn btn-primary making-status-btn",data:{turbolinks:false} %>
+        <span class="link-hover"><%= f.submit "更新" ,class:"btn making-status-btn",data:{turbolinks:false} %></span>
 
       <% end %>
     </td>
