@@ -1,9 +1,13 @@
-<h1>注文履歴一覧</h1>
-  <div class="row">
-  	<div class="col-xs-8 col-xs-offset-2">
-	  <table class="table table-borderless">
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+  	<h1 class="page-title">注文履歴一覧</h1>
+  </div>
+</div>
+<div class="row">
+ <div class="col-xs-7 col-xs-offset-1">
+	  <table class="table">
 	  	<thead>
-		  <tr class="active">
+		  <tr class="table-top">
 			<th>購入履歴</th>
 			<th>購入者</th>
 			<th>注文個数</th>
@@ -13,8 +17,8 @@
 	  	<tbody>
 	  	  <% @orders.each do |order| %>
 	  	    <tr>
-	  	      <td>
-	  	      	<%= link_to admins_order_path(order) do %>
+	  	      <td class="btn-hover">
+	  	      	<%= link_to admins_order_path(order),class: "border" do %>
 	  	      	  <%= l order.created_at %></td>
 	  	      	<% end %>
 	  	      <td><%= order.public.last_name %> <%= order.public.first_name %></td>

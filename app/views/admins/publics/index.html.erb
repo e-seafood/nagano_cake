@@ -1,8 +1,9 @@
-
-<h1>会員一覧</h1>
-<table>
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+<h1 class="page-title">会員一覧</h1>
+<table class="table box-top">
   <thead>
-    <tr>
+    <tr class="table-top">
       <th>会員ID</th>
       <th>氏名</th>
       <th>メールアドレス</th>
@@ -13,8 +14,8 @@
     <% @publics.each do |public| %>
     <tr>
       <td><%= public.id %></td>
-      <td>
-        <%= link_to admins_public_path(public) do %>
+      <td class="btn-hover">
+        <%= link_to admins_public_path(public), class: "border" do %>
           <%= public.last_name %>
           <%= public.first_name %>
         <% end %>
@@ -32,4 +33,5 @@
   </tbody>
 </table>
 <%= paginate @publics %>
-
+</div>
+</div>
