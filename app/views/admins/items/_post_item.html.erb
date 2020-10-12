@@ -1,7 +1,7 @@
 <%= form_for(item, url: path) do |f| %>
   <% if item.errors.any? %>
     <div>
-      <h2><%= item.errors.count %>件のエラーが発生しました。</h2>
+      <h4><%= item.errors.count %>件のエラーが発生しました。</h4>
       <ul>
       <% item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -9,8 +9,8 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= image_tag "no_image.png", size: '200x200', id: "img_prev" %>
+  <div class="col-xs-4">
+    <%= image_tag "no_image.png", size: '330x230', id: "img_prev" %>
     <%= f.attachment_field :image, id: "post_post_img" %>
     <!--JavaScroptの読み込み-->
     <script type="text/javascript">
@@ -34,25 +34,29 @@
       });
     </script>
   </div>
-  <div>
-    <%= f.label :name, "商品名" %>
-    <%= f.text_field :name %>
+  <div class="col-xs-5">
+    <table class="table" id="table-borderless">
+      <tr>
+        <td><%= f.label :name, "商品名" %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :explanation, "商品説明" %></td>
+        <td><%= f.text_area :explanation %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :genre_id, "ジャンル" %></td>
+        <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :non_taxed_price, "税抜価格" %></td>
+        <td><%= f.text_field :non_taxed_price %> 円</td>
+      </tr>
+      <tr>
+        <td><%= f.label :is_active, "販売ステータス" %></td>
+        <td><%= f.select :is_active, [["販売中", true], ["売切れ", false]], include_blank: "--選択してください--" %></td>
+      </tr>
+    </table>
+    <%= f.submit item.new_record?? "新規登録" : "変更を保存", class: "btn btn-primary pull-right" %>
   </div>
-  <div>
-    <%= f.label :explanation, "商品説明" %>
-    <%= f.text_area :explanation %>
-  </div>
-  <div>
-    <%= f.label :genre_id, "ジャンル" %>
-    <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択してください--" %>
-  </div>
-  <div>
-    <%= f.label :non_taxed_price, "税抜価格" %>
-    <%= f.text_field :non_taxed_price %>円
-  </div>
-  <div>
-    <%= f.label :is_active, "販売ステータス" %>
-    <%= f.select :is_active, [["販売中", true], ["売切れ", false]], include_blank: "--選択してください--" %>
-  </div>
-  <%= f.submit item.new_record?? "新規登録" : "変更を保存", class: "btn btn-primary pull-right" %>
 <% end %>
