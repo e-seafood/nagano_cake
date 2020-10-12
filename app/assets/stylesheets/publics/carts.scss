@@ -17,3 +17,20 @@ input[type="number"] {
 .td_vertical_align_middle.td_vertical_align_middle {
   vertical-align: middle;
 }
+.cart-list{
+	display: flex;
+	margin-bottom: 5px;
+}
+.cart-item{
+	width: 180px;
+}
+.sippings-select{
+	width: 300px;
+}
+span > select{
+	width: 500px;
+	margin-left: 50px;
+}
+.cart-btn{
+	margin-top: 20px;
+}
