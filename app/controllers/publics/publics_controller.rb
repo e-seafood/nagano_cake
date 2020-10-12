@@ -18,12 +18,11 @@ class Publics::PublicsController < ApplicationController
 	end
 
 	def edit
-    @public = current_public
 	end
 
 	def update
-    @public = current_public
-		if @public.update(public_params)
+    public = Public.find(current_user.id)
+		if public.update(public_params)
       redirect_to publics_path
 		else
       render :edit 
