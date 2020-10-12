@@ -21,7 +21,7 @@ class Publics::PublicsController < ApplicationController
 	end
 
 	def update
-    public = Public.find(current_user.id)
+    public = Public.find(current_public.id)
 		if public.update(public_params)
       redirect_to publics_path
 		else

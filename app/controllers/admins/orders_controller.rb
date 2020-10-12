@@ -3,8 +3,7 @@ class Admins::OrdersController < ApplicationController
 before_action :authenticate_admin!
 
 	def top
-		#今日のオーダーを取得
-		@oders = Order.where("created_at >= ?", Date.today)
+		@orders = Order.where("created_at >= ?", Date.today)
 	end
 
 	def index
