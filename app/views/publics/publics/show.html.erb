@@ -1,12 +1,12 @@
 	<div class = "row">
 	<div class="mypage col-xs-offset-1 col-xs-8">
-	<h2 class = "mypage2">マイページ</h2>
+	<h2 class="page-title">マイページ</h2>
 	
-			<p><strong class = infomation>登録情報</strong>
-			<%= link_to " 編集する", edit_publics_path, class: "glyphicon btn btn-success" %>
-			<%= link_to " パスワードを変更する", edit_public_registration_path, class: "glyphicon btn btn-warning" %></p>
+			<span class="page-sub-title">登録情報</span>
+			  <span class="mypage-btn"><%= link_to " 編集する", edit_publics_path, class: "glyphicon btn btn-success" %></span>
+			  <span class=""><%= link_to " パスワードを変更する", edit_public_registration_path, class: "glyphicon btn btn-warning" %></span>
 
-			<table class="table" >
+			<table class="table table-bordered" >
 				<tbody>
 					<tr>
 						<td>氏名</td>
@@ -35,10 +35,10 @@
 				</tbody>
 			</table>
 
-				<h3 class="mypage3">配送先</h3>
-					<%= link_to " 一覧を見る", shippings_path, class:"shiplook glyphicon btn btn-info" %>
+				<span class="page-sub-title">配送先　
+				  <%= link_to " 一覧を見る", shippings_path, class:"shiplook glyphicon btn btn-info" %></span>
 				<br><br>
-				<h3 class="mypage4">注文履歴</h3>
-					<%= link_to " 一覧を見る", orders_path, class: "glyphicon btn btn-info"%>
+				<span class="page-sub-title">注文履歴
+				  <%= link_to " 一覧を見る", orders_path, class:"shiplook glyphicon btn btn-info" %></span>
 	</div>
 	</div>

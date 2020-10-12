@@ -2,26 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.btn-green{
-	background-color: #82ae46;
-	color : #fff;
-}
 .table-top{
 	background-color: #d8e698;
 }
 .page-title{
-	border-bottom: solid 3px #82ae46;
 	margin-top: 10px;
 	width: 50%;
 }
 .border{
-	border-bottom: dotted 3px #d8e698;
+	border-bottom: solid 1px #888;
 }
 .box-top{
 	margin-top: 10px;
 }
 .btn-hover :hover {
-  text-decoration: none;
-  color: #82ae46;
-  font-weight: 800;
+	border-bottom: double 3px #888;
+ 	text-decoration: none;
+  	color: black;
+  	font-weight: 800;
+}
+.table-hover :hover{
+	background-color: #f9f9f9;
+}
+.table-btn{
+	padding:3px 12px;
 }
