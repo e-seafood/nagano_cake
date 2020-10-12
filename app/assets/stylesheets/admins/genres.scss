@@ -1,3 +1,27 @@
 // Place all the styles related to the admins/genres controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-green{
+	background-color: #82ae46;
+	color : #fff;
+}
+.table-top{
+	background-color: #d8e698;
+}
+.page-title{
+	border-bottom: solid 3px #82ae46;
+	margin-top: 10px;
+	width: 50%;
+}
+.border{
+	border-bottom: dotted 3px #d8e698;
+}
+.box-top{
+	margin-top: 10px;
+}
+.btn-hover :hover {
+  text-decoration: none;
+  color: #82ae46;
+  font-weight: 800;
+}
