@@ -1,11 +1,6 @@
-<div class="edit-shipping">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-offset-1 col-sm-6">
-        <br><div class="headline"><h2>配送先編集</h2></div>
-      </div>
-    </div>
-  </div>
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-6">
+    <h2 class="page-title">配送先編集</h2>
 
    <% if @shipping.errors.any? %>
     <div>
@@ -18,25 +13,28 @@
     </div>
     <% end %>
 
-    <table>
     	<%= form_for(@shipping) do |f| %>
-        <tr>
-        <td><%= f.label :postcode, "郵便番号(ハイフンなし)" %></td>
-		    <td><%= f.text_field :postcode %></td>
-		      </tr>
 
-        <tr>
-		    <td><%= f.label :address, "住所" %></td>
-		    <td><%= f.text_field :address, :size => 60 %></td>
-		</tr>
+        <div>
+          <span><%= f.label :postcode, "郵便番号(ハイフンなし)" %></span>
+		      <span><%= f.text_field :postcode %></span>
+		    </div>
 
-		<tr>
-		    <td><%= f.label :name, "宛名" %></td>
-		    <td><%= f.text_field :name %></td>
-		    <td><%= f.submit '編集する',class:"btn btn-primary" %></td>
-		</tr>
+        <div>
+		      <span><%= f.label :address, "住所" %></span>
+		      <span><%= f.text_field :address, :size => 50 %></span>
+		    </div>
+
+		    <div>
+  		    <span><%= f.label :name, "宛名" %></span>
+  		    <span><%= f.text_field :name %></span>
+        </div>
+
+        <div>
+  		    <span><%= f.submit '編集する',class:"btn btn-primary" %></span>
+		    </div>
 	    <% end %>
-	</table>
+  </div>
 </div>
 
 
