@@ -3,6 +3,9 @@
 <h3 class ="adminlog">管理者ログイン</h3>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%- flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+          <%- end -%>  
 
   <div class="form-group col-md-9">
     <%= f.label :"メールアドレス", class: "col-sm-4 control-label text-center" %>
