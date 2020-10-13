@@ -55,15 +55,15 @@
       <tbody>
         <tr>
           <th>商品合計</th>
-          <td class="text_rigth"><%= items_total(@order.order_items) %>円</td>
+          <td class="text_rigth"><%= items_total(@order.order_items).to_s(:delimited) %>円</td>
         </tr>
          <tr>
           <th>送料</th>
-          <td class="text_rigth"><%= post_age %>円</td>
+          <td class="text_rigth"><%= post_age.to_s(:delimited) %>円</td>
         </tr>
          <tr>
           <th>請求金額合計</th>
-          <th class="text_rigth"><%= amount(@order.order_items) %>円</th>
+          <th class="text_rigth"><%= amount(@order.order_items).to_s(:delimited) %>円</th>
         </tr>
       </tbody>
     </table>
