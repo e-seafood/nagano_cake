@@ -5,24 +5,24 @@
 	  <%= render 'admins/genres/post_genre',genre: @genre, path: admins_genres_path(@genre) %>
   	<table class="table box-top">
 	  <thead>
-	    <tr class="table-top">
+	    <tr class="active">
 	      <th>ジャンル</th>
 	      <th>状態</th>
 	      <th></th>
 	    </tr>
 	  </thead>
-	  <tbody>
+	  <tbody class="table-hover table-body">
 	 	<% @genres.each do |genre| %>
 		  <tr>
 		  	<td><%= genre.name %></td>
 		  	<td>
-          <% if genre.is_active == true %>
-            有効
-          <% else %>
-            無効
-          <% end %>
-        </td>
-        <td class="btn-hover"><%= link_to "編集する",edit_admins_genre_path(genre),class: "border btn-hover" %></td>
+	          <% if genre.is_active == true %>
+	            有効
+	          <% else %>
+	            無効
+	          <% end %>
+        	</td>
+        <td class="btn-hover"><%= link_to "編集する",edit_admins_genre_path(genre),class: "btn btn-primary btn-sm" %></td>
 		  </tr>
 		<% end %>
 	  </tbody>

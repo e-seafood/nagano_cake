@@ -12,9 +12,9 @@
     <td><%= @public.id %></td>
     <td>
       <% if @public.is_deleted == false %>
-          有効会員
+          <span class="status-true">有効会員</span>
         <% else %>
-          退会済会員
+          <span class="status-false">退会済会員</span>
         <% end %>
     </td>
   </tr>
@@ -45,7 +45,7 @@
   </tr>
 </table>
 
-<span class="link-hover"><%= link_to "編集する", edit_admins_public_path(@public), class: "btn" %></span>
-<span class="link-hover"><%= link_to "注文履歴一覧を見る",admins_orders_path(@public), class: "btn"  %></span>
+<span class="link-hover"><%= link_to "編集する", edit_admins_public_path(@public), class: "btn btn-primary" %></span>
+<span class="link-hover"><%= link_to "注文履歴一覧を見る",admins_orders_path(@public), class: "btn btn-primary"  %></span>
 </div>
 </div>

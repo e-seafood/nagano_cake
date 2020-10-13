@@ -2,9 +2,9 @@
   <div class="col-xs-8 col-xs-offset-2">
     <div class="order">
       <%= alert %>
-      <h3>注文情報入力</h3>
+      <h3 class="page-title">注文情報入力</h3>
       <%= form_for(@order, url: confirm_orders_path, html: {method: "post"}) do |f| %>
-        <h4><strong>支払方法</strong></h4>
+        <h4 class="page-sub-title"><strong>支払方法</strong></h4>
         <div>
           <%= f.radio_button :payment, "クレジットカード", checked: true %>
           <%= f.label :payment, "クレジットカード" %>
@@ -14,7 +14,7 @@
           <%= f.label :payment, "銀行振込" %>
         </div>
 
-        <h4><strong>お届け先</strong></h4>
+        <h4 class="page-sub-title"><strong>お届け先</strong></h4>
         <div class="address">
           <%= radio_button_tag(:select_address, "ご自身の住所", checked: true) %>
           <%= label_tag :select_address, "ご自身の住所" %><br>
@@ -25,28 +25,30 @@
           <%= radio_button_tag(:select_address, "登録済住所から選択") %>
           <%= label_tag :select_address, "登録済住所から選択" %>
           <%= fields_for @shipping do |f| %>
-            <%= f.collection_select :id, @shippings, :id, :shipping_all %>
+            <span><%= f.collection_select :id, @shippings, :id, :shipping_all %></span>
           <% end %>
         </div>
         <div class="address">
           <%= radio_button_tag(:select_address, "新しいお届け先") %>
           <%= label_tag :select_address, "新しいお届け先" %>
-          <table class="table" id="table-borderless">
-            <tr>
-              <td class="col-xs-3"><%= f.label :postcode, "郵便番号（ハイフンなし）" %></td>
-              <td><%= f.text_field :postcode %></td>
-            </tr>
-            <tr>
-              <td class="col-xs-3"><%= f.label :address, "住所" %></td>
-              <td><%= f.text_field :address %></td>
-            </tr>
-            <tr>
-              <td class="col-xs-3"><%= f.label :name, "宛名" %></td>
-              <td><%= f.text_field :name %></td>
-            </tr>
-          </table>
         </div>
-        <%= f.submit "確認画面へ進む", class: "btn btn-primary center-block" %>
+          <div class="col-xs-12">
+            <div class="cart-list">
+              <span class="cart-item"><%= f.label :postcode, "郵便番号（ハイフンなし）" %></span>
+              <span class="cart-item"><%= f.text_field :postcode %></span>
+            </div>
+            <div class="cart-list">
+              <span class="cart-item"><%= f.label :address, "住所" %></span>
+              <span class="cart-item"><%= f.text_field :address, size:60 %></span>
+            </div>
+            <div class="cart-list">
+              <span class="cart-item"><%= f.label :name, "宛名" %></span>
+              <span class="cart-item"><%= f.text_field :name %></span>
+            </div>
+
+            <div class="cart-btn">
+              <%= f.submit "確認画面へ進む", class: "btn btn-primary center-block" %>
+            </div>
       <% end %>
     </div>
   </div>

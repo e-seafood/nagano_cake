@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-xs-6 col-xs-offset-1">
-<h1 class="page-title pick-up-title">
+<h1 class="page-title">
   <%= @public.last_name %>
   <%= @public.first_name %>
   さんの会員情報編集
@@ -47,9 +47,7 @@
     	</td>
     </tr>
 </table>
-<div class="row">
-  <div class="col-xs-1 col-xs-offset-9">
-    <span class="link-hover"><%= f.submit "変更を保存する" , class: "btn" %></span>
+    <span class="link-hover"><%= f.submit "変更を保存する" , class: "btn btn-primary" %></span>
     <% end %>
 </div>
 </div>

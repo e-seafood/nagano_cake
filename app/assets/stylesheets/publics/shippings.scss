@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .shipping-item{
 	margin-left: 120px;
 }
@@ -16,4 +17,20 @@
 
 .edit-shipping-box{
 	margin-left:300px;
+
+.edit-list{
+	display: flex;
+}
+.edit-list-title{
+	width: 180px;
+}
+.edit-list-item{
+	flex-basis: 90px;
+	margin: 3px;
+}
+.edit-list-blank{
+	flex-basis: 95px;
+}
+.mypage-btn{
+	margin-top: 10px;
 }

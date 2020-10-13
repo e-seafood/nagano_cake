@@ -6,25 +6,27 @@
 	background-color: #82ae46;
 	color : #fff;
 }
-.table-left {
-	border-right: double  3px #ddd;
-}
 .page-title{
-	border-bottom: solid 3px #82ae46;
 	margin-top: 10px;
 	width: 50%;
 	margin-bottom: 20px;
 	font-size: 20px;
 }
-.border{
-	border-bottom: dotted 3px #d8e698;
-}
+
 .box-top{
 	margin-top: 10px;
 }
-.link-hover :hover{
-  background-color: #82ae46;
+
+.status-true,
+.status-false{
+	border: solid 1px #333;
+	padding: 3px;
+	border-radius: 5px;
 }
-.btn{
-	background-color: #d8e698;
+.status-true{
+	background-color: #66d9ff ;
+}
+.status-false{
+	background-color: #d83473;
+	color: #fff;
 }

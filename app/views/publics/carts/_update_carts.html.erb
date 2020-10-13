@@ -1,3 +1,4 @@
+<div class= "row">
 <table class="table table-bordered">
   <thead>
     <tr class="active">
@@ -20,7 +21,7 @@
         <td >
           <%= form_with(model:cart, url:cart_path(cart)) do |f| %>
             <%= f.text_field :item_count, :value => cart.item_count,class:"items-update" %>
-            <%= f.submit "変更" %>
+            <%= f.submit "変更" ,class:"btn btn-primary"%>
           <% end %>
         </td>
         <td><%= sub_total(cart).to_s(:delimited) %></td>
@@ -31,10 +32,18 @@
     <% end %>
   </tbody>
 </table>
+</div>
+
+<div class="row">
+<div class = "col-md-2">
 <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+</div>
+<div class="col-md-offset-8 col-md-2">
 <table class="table table-bordered">
-  <tr class="items-total">
+  <tr>
     <th class="active">合計金額</th>
     <td><%= items_total(carts).to_s(:delimited) %></td>
   </tr>
 </table>
+</div>
+</div>
