@@ -7,23 +7,23 @@
     </div>
   </div>
 
-  <% if @shipping.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @shipping.errors.count %>件のエラーが発生しました。</h2>
+   <% if @shipping.errors.any? %>
+    <div>
+      <h4><%= @shipping.errors.count %>件のエラーが発生しました。</h4>
       <ul>
-        <% @shipping.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+      <% @shipping.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
     <table>
     	<%= form_for(@shipping) do |f| %>
-          <tr>
-          	<td><%= f.label :postcode, "郵便番号(ハイフンなし)" %></td>
+        <tr>
+        <td><%= f.label :postcode, "郵便番号(ハイフンなし)" %></td>
 		    <td><%= f.text_field :postcode %></td>
-		</tr>
+		      </tr>
 
         <tr>
 		    <td><%= f.label :address, "住所" %></td>

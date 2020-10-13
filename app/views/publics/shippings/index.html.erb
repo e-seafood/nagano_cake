@@ -7,16 +7,16 @@
 		</div>
 	</div>
 
-	<% if @shipping.errors.any? %>
-	  <div id="error_explanation">
-	  	<h2><%= @shipping.errors.count %>件のエラーが発生しました。</h2>
-	  	<ul>
-	  		<% @shipping.errors.full_messages.each do |message| %>
-	  		  <li><%= message %></li>
-	  		<% end %>
-	  	</ul>
-	  </div>
-	<% end %>
+   <% if @shipping.errors.any? %>
+    <div>
+      <h4><%= @shipping.errors.count %>件のエラーが発生しました。</h4>
+      <ul>
+      <% @shipping.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
 
 <div class="container">
 	<div class="row">
