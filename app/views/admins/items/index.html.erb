@@ -12,12 +12,12 @@
           <th>ステータス</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-hover">
         <% @items.each do |item| %>
           <tr>
             <td><%= item.id %></td>
-            <td>
-              <%= link_to admins_item_path(item) do %>
+            <td class="btn-hover">
+              <%= link_to admins_item_path(item), class:"border" do %>
                 <%= item.name %>
               <% end %>
             </td>

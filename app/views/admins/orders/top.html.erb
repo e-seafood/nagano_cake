@@ -1,12 +1,12 @@
-<div class="containar">
-	<h3 class="admin-homes-top-title">管理者画面</h3>
+
+	<h3 class="admin-title">管理者画面</h3>
 
 	<div class="row admin-homes-top-message">
-		<span class="col-xs-3">本日の注文件数</span>
-		<span class="col-xs-9">
-			<%= link_to admins_orders_path do %>
-			  <%= Order.count %>
-			<% end %>件
+		<span class="admin-top col-xs-3">本日の注文件数</span>
+		<span class="admin-top2 col-xs-9">
+			<%= link_to admins_orders_path do %> 
+			  <%= @orders.count %>件
+			<% end %>
 		</span>
 	</div>
 </div>
