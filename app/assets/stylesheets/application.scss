@@ -77,16 +77,18 @@ body {
 	position: relative;
 }
 .top-text {
-	background-color: rgba(255, 255, 255, 0.7);
-	padding: 15px;
-	position: absolute;
-	top: 10%;
-	left: 3%;
+	background-color: rgba(0,0,0, 0.5);
+    padding: 30px;
+    color: #ddd;
+    position: absolute;
+    top: 10%;
+    left: 3%;
 }
 
 .top-text p {
-	font-weight: bold;
-	font-size: 15px;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 2;
 }
 
 .pick-up-box {
