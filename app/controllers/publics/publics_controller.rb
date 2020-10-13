@@ -33,7 +33,7 @@ class Publics::PublicsController < ApplicationController
 	private
 
 	def public_params
-		params.require(:public).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :email, :tel)
+		params.require(:public).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :email, :address, :tel)
   end
 
 end
