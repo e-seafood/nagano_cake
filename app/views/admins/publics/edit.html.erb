@@ -9,6 +9,16 @@
 
 <table class="table">
   <%= form_for(@public, url:admins_public_path(@public)) do |f| %>
+    <% if @public.errors.any? %>
+    <div>
+      <h4><%= @public.errors.count %>件のエラーが発生しました。</h4>
+      <ul>
+      <% @public.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
     <tr>
     	<td class="table-left">会員ID</td>
         <td><%= @public.id %></td>

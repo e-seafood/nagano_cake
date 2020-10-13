@@ -28,6 +28,8 @@ ja:
         genre: ジャンル
         non_taxed_price: 税抜価格
         is_active: 販売ステータス
+      genre:
+        name: ジャンル名
   errors:
     format: "%{attribute}%{message}"
     messages:
