@@ -26,8 +26,7 @@ class Publics::CartsController < ApplicationController
   def update
     @cart = Cart.find_by(id: params[:id])
     @carts = Cart.where(public_id: current_public.id).order(:item_id)
-    if @cart.update(cart_params)
-    end
+    @cart.update(cart_params)
   end
 
   def destroy
