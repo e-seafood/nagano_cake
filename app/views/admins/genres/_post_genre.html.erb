@@ -1,7 +1,7 @@
 <%= form_with(model:genre, url: path) do |f| %>
   <% if genre.errors.any? %>
     <div>
-      <h2><%= genre.errors.count %>件のエラーが発生しました。</h2>
+      <h4><%= genre.errors.count %>件のエラーが発生しました。</h4>
       <ul>
       <% genre.errors.full_messages.each do |message| %>
         <li><%= message %></li>

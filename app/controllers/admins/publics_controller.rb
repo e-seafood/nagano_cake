@@ -19,7 +19,7 @@ before_action :authenticate_admin!
 		if @public.update(public_params)
 			redirect_to admins_public_path(@public)
 		else
-			render "edit"
+			render :edit
 		end
 	end
 
