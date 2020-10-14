@@ -3,7 +3,7 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+&nbsp;Things you may want to cover:
 
 * Ruby version
 
@@ -19,6 +19,6 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-&nbsp;* Deployment instructions
+* Deployment instructions
 
 * ...
