@@ -17,4 +17,3 @@ class Publics::ItemsController < ApplicationController
     @cart = Cart.new
   end
 end
-
