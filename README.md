@@ -82,34 +82,34 @@
 管理者側のヘッダーには検索機能を実装しており、実際に検索すると検索結果画面が表示されます。<br>
 
 ## 使用言語
-・Ruby on rails (5,2,4)
-・HTML&CSS
-・Javascript
+・Ruby on rails (5,2,4)<br>
+・HTML&CSS<br>
+・Javascript<br>
 
 ## Gem
-・devise
-・refile
-・refile-mini_magick
-・bootstrap-sass 3.3.6
-・jquery-rails
-・devise-i18n
-・devise-i18n-views
-・kaminari 1.2.1
-・rubocop-airbnb
-・dotenv-rails
+・devise<br>
+・refile<br>
+・refile-mini_magick<br>
+・bootstrap-sass 3.3.6<br>
+・jquery-rails<br>
+・devise-i18n<br>
+・devise-i18n-views<br>
+・kaminari 1.2.1<br>
+・rubocop-airbnb<br>
+・dotenv-rails<br>
 
 ## 使用方法
-上記のライブラリをインストール後
-git clone https://github.com/e-seafood/nagano_cake.git
-cd nagano_cake
-bundle install
-rails s -b 0.0.0.0
+上記のライブラリをインストール後<br>
+git clone https://github.com/e-seafood/nagano_cake.git<br>
+cd nagano_cake<br>
+bundle install<br>
+rails s -b 0.0.0.0<br>
 を実行してご使用ください。
 
 ## 作成者
-・青島優
-・齋藤由佳
-・河内烈央
+・青島優<br>
+・齋藤由佳<br>
+・河内烈央<br>
 ・塚本拓也
 
 ## 所属
