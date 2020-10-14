@@ -1,66 +1,65 @@
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-1">
-	<h2 class="page-title">配送先登録/一覧</h2>
 
-       <% if @shipping.errors.any? %>
-    <div>
-      <h4><%= @shipping.errors.count %>件のエラーが発生しました。</h4>
-      <ul>
-      <% @shipping.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-    <% end %>
+	<div class="col-xs-8 col-xs-offset-1">
+		<h2 class="page-title">配送先登録/一覧</h2>
 
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-		    <%= form_for(@shipping) do |f| %>
-			  <div class="shipping-index-list">
-				<span class="shipping-title"><%= f.label :postcode, "郵便番号(ハイフンなし)" %></span>
-				<span class="shipping"><%= f.text_field :postcode %></span>
-			  </div>
-			  <div>
-				<span class="shipping-title"><%= f.label :address, "住所" %></span>
-				<span class="shipping-item"><%= f.text_field :address, :size => 60 %></span>
-			  </div>
-			  <div>
-				<span class="shipping-title"><%= f.label :name, "宛名" %></span>
-				<span class="shipping-item"><%= f.text_field :name %></span>
-				<span class="shipping-box"><%= f.submit '登録する',class:"btn btn-success" %></span>
-			  </div>
-		    <% end %>
-		  </table>
-		  <br>
-		  <br>
+		<% if @shipping.errors.any? %>
+		<div>
+			<h4><%= @shipping.errors.count %>件のエラーが発生しました。</h4>
+			<ul>
+				<% @shipping.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+		<div class="row">
+			<div class="col-xs-12">
+				<%= form_for(@shipping) do |f| %>
+				<div class="shipping-index-list">
+					<span class="shipping-title"><%= f.label :postcode, "郵便番号(ハイフンなし)" %></span>
+					<span class="shipping"><%= f.text_field :postcode %></span>
+				</div>
+				<div>
+					<span class="shipping-title"><%= f.label :address, "住所" %></span>
+					<span class="shipping-item"><%= f.text_field :address, :size => 60 %></span>
+				</div>
+				<div>
+					<span class="shipping-title"><%= f.label :name, "宛名" %></span>
+					<span class="shipping-item"><%= f.text_field :name %></span>
+					<span class="shipping-box"><%= f.submit '登録する',class:"btn btn-success" %></span>
+				</div>
+				<% end %>
+				</table>
+				<br>
+				<br>
+			</div>
 		</div>
 	</div>
-</div>
 
-<div class="row">
-  <div class="col-xs-10 col-xs-offset-1">
-	<table class="table table-bordered table-hover">
-		<thead>
-			<tr class="active">
-				<th>郵便番号</th>
-				<th>住所</th>
-				<th>宛名</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @shippings.each do |shipping| %>
-			  <tr class="new table">
-			  	<td><%= shipping.postcode %></td>
-			  	<td><%= shipping.address %></td>
-			  	<td><%= shipping.name %></td>
-			  	<td><%= link_to '編集する', edit_shipping_path(shipping),class:"btn btn-primary" %>
-				    <%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に削除してよろしいですか？",class:"btn btn-danger" %>
-				</td>
-			  </tr>
-			<% end %>
-		</tbody>
-    </table>
-  </div>
-</div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr class="active">
+						<th>郵便番号</th>
+						<th>住所</th>
+						<th>宛名</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @shippings.each do |shipping| %>
+					<tr class="new table">
+						<td><%= shipping.postcode %></td>
+						<td><%= shipping.address %></td>
+						<td><%= shipping.name %></td>
+						<td><%= link_to '編集する', edit_shipping_path(shipping),class:"btn btn-primary" %>
+							<%= link_to '削除する', shipping_path(shipping), method: :delete, "data-confirm" => "本当に削除してよろしいですか？",class:"btn btn-danger" %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>

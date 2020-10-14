@@ -4,7 +4,7 @@
 	<div class="row admin-homes-top-message">
 		<span class="admin-top col-xs-3">本日の注文件数</span>
 		<span class="admin-top2 col-xs-9">
-			<%= link_to admins_orders_path do %> 
+			<%= link_to admins_orders_path(type: 'today')  do %>
 			  <%= @orders.count %>件
 			<% end %>
 		</span>

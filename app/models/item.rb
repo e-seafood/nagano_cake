@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
-	belongs_to :genre
+  belongs_to :genre
 
   has_many :order_items
   has_many :orders, through: :order_items
-	has_many :carts
+  has_many :carts
   has_many :publics, through: :carts
 
   attachment :image
@@ -14,5 +14,4 @@ class Item < ApplicationRecord
   validates :genre, presence: true
   validates :non_taxed_price, presence: true
   validates :is_active, inclusion: { in: [true, false] }
-
 end

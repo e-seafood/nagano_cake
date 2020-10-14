@@ -1,2 +1,3 @@
 $(".items-update").val("");
 $(".cart-items").html("<%= j(render 'publics/carts/update_carts', carts: @carts) %>");
+$('#result').html("<%= j(render 'publics/carts/error_msg',cart: @cart) %>");

@@ -1,5 +1,4 @@
 class Publics::CartsController < ApplicationController
-
   before_action :authenticate_public!
 
   def index
@@ -25,13 +24,8 @@ class Publics::CartsController < ApplicationController
 
   def update
     @cart = Cart.find_by(id: params[:id])
-    if @cart.update(cart_params)
-       @carts = Cart.where(public_id: current_public.id).order(:item_id)
-    else
-      flash.now[:alert] = '個数は1以上を選択してください。'
-      @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
-      render :index
-    end
+    @carts = Cart.where(public_id: current_public.id).order(:item_id)
+    @cart.update(cart_params)
   end
 
   def destroy
@@ -46,8 +40,8 @@ class Publics::CartsController < ApplicationController
   end
 
   private
+
   def cart_params
     params.require(:cart).permit(:public_id, :item_id, :item_count)
   end
-
 end

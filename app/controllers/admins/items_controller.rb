@@ -1,5 +1,4 @@
 class Admins::ItemsController < ApplicationController
-
   before_action :authenticate_admin!
 
   def new
@@ -7,7 +6,8 @@ class Admins::ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.page(params[:page])
+    @items = Item.joins(:genre).where(genres: { is_active: "有効" }).
+      page(params[:page])
   end
 
   def create
@@ -37,8 +37,8 @@ class Admins::ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:genre_id, :name, :explanation, :non_taxed_price, :image, :is_active)
   end
-
 end

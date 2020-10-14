@@ -1,5 +1,6 @@
 <div class= "row">
 <table class="table table-bordered">
+  <%= alert %>
   <thead>
     <tr class="active">
       <th>商品名</th>
@@ -21,7 +22,7 @@
         <td >
           <%= form_with(model:cart, url:cart_path(cart)) do |f| %>
             <%= f.text_field :item_count, :value => cart.item_count,class:"items-update" %>
-            <%= f.submit "変更" ,class:"btn btn-primary"%>
+            <%= f.submit "変更" ,class:"btn btn-primary cart-update-btn"%>
           <% end %>
         </td>
         <td><%= sub_total(cart).to_s(:delimited) %></td>

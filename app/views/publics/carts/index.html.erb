@@ -1,7 +1,8 @@
 
 <h1 class="page-title">ショッピングカート</h1>
+	<div id="result" >
 
-<%= alert %>
+    </div>
 <% if @carts.present? %>
   <%= link_to "カートを空にする", cart_destroy_all_path(@carts), method: :delete, data: {confirm: "カートを空にしてよろしいですか？"}, class: "btn btn-danger pull-right" %>
 <% end %>
