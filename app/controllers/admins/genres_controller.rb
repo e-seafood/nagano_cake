@@ -11,8 +11,6 @@ before_action :authenticate_admin!
 		@genre = Genre.new(genre_params)
 		@genres = Genre.all.page(params[:page])
 		if 	@genre.save
-		else
-			render "index"
 		end
 	end
 

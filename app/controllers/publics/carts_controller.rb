@@ -25,12 +25,8 @@ class Publics::CartsController < ApplicationController
 
   def update
     @cart = Cart.find_by(id: params[:id])
+    @carts = Cart.where(public_id: current_public.id).order(:item_id)
     if @cart.update(cart_params)
-       @carts = Cart.where(public_id: current_public.id).order(:item_id)
-    else
-      flash.now[:alert] = '個数は1以上を選択してください。'
-      @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
-      render :index
     end
   end
 
