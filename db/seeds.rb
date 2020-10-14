@@ -12,9 +12,9 @@ Public.create!(
 	first_name: "名#{n+1}",
 	last_name_kana: "セイ#{n+1}",
 	first_name_kana: "メイ#{n+1}",
-	postcode: "1234567",
-	address: "東京都渋谷区神宮前三丁目",
-	tel: "09012345678",
+	postcode: "1500041",
+	address: "東京都渋谷区神南1-19-11",
+	tel: "0368694700",
 	is_deleted: "false",
 	password: "111111"
 	)
@@ -25,89 +25,172 @@ Genre.create!(
 	is_active: true
 )
 Genre.create!(
-	name: "クッキー・焼き菓子",
-	is_active: true
-)
-Genre.create!(
-	name: "チョコレート",
-	is_active: true
-)
-Genre.create!(
 	name: "プリン",
-	is_active: false
+	is_active: true
+)
+Genre.create!(
+	name: "焼き菓子",
+	is_active: true
+)
+Genre.create!(
+	name: "キャンディ",
+	is_active: true
 )
 Genre.create!(
 	name: "和菓子",
-	is_active: true
-)
-Genre.create!(
-	name: "アイス",
 	is_active: false
 )
 
 Item.create!(
-	name: "洋梨のチーズタルト",
-	explanation: "北海道産の最高級チーズタルト",
-	non_taxed_price: "5555",
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
 	genre_id: 1,
 	is_active: true,
-	image: open("./app/assets/images/younashi.jpg")
+	image: open("./app/assets/images/cake1.jpg")
 )
 Item.create!(
-	name: "フルーツもりもりケーキ",
-	explanation: "お祝いにぴったりな特別感溢れるケーキです",
-	non_taxed_price: "1400",
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
 	genre_id: 1,
 	is_active: true,
-	image: open("./app/assets/images/ho-ruke-ki.jpg")
+	image: open("./app/assets/images/cake2.jpg")
 )
 Item.create!(
-	name: "クッキー",
-	explanation: "これはただのクッキーではありません。香ばしく歯応え抜群です",
-	non_taxed_price: "200",
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 1,
+	is_active: true,
+	image: open("./app/assets/images/cake3.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 1,
+	is_active: true,
+	image: open("./app/assets/images/cake4.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 1,
+	is_active: true,
+	image: open("./app/assets/images/cake5.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 1,
+	is_active: true,
+	image: open("./app/assets/images/cake6.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 1,
+	is_active: true,
+	image: open("./app/assets/images/cake7.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 1,
+	is_active: true,
+	image: open("./app/assets/images/cake8.jpg")
+)
+Item.create!(
+	name: "特産地鶏のなめらかプリン",
+	explanation: "県内で採れた特産地鶏の卵をふんだんに使用した、口あたりの柔らかいプリンです。 ほろ苦いカラメルと合わせてお召し上がりください。",
+	non_taxed_price: "380",
 	genre_id: 2,
 	is_active: true,
-	image: open("./app/assets/images/kukki-.jpg")
+	image: open("./app/assets/images/purinn1.jpg")
 )
 Item.create!(
-	name: "キットカット",
-	explanation: "オリジナルキットカットです",
-	non_taxed_price: "150",
+	name: "ビターショコラのムース",
+	explanation: "ほろ苦いムースに香ばしいアーモンドをトッピングした大人向けの商品。 甘酸っぱいベリーと、さっぱりとしたオレンジで味の変化をお楽しみください。",
+	non_taxed_price: "450",
+	genre_id: 2,
+	is_active: true,
+	image: open("./app/assets/images/purinn2.jpg")
+)
+Item.create!(
+	name: "口溶けやわらか二層のムース",
+	explanation: "二層に分かれたビターショコラとミルクのムースに、ブルーベリーとラズベリーをたっぷりトッピングした一品。",
+	non_taxed_price: "400",
+	genre_id: 2,
+	is_active: true,
+	image: open("./app/assets/images/purinn3.jpg")
+)
+Item.create!(
+	name: "北海道産バターのマドレーヌ",
+	explanation: "北海道産の上質なバターをたっぷり使って、しっとりとした食感に仕上げました。",
+	non_taxed_price: "250",
 	genre_id: 3,
-	is_active: false,
-	image: open("./app/assets/images/kittokatto.jpg")
+	is_active: true,
+	image: open("./app/assets/images/yakigashi1.jpg")
 )
 Item.create!(
-	name: "ホイップましましプリン",
-	explanation: "インスタ映え間違いなし",
-	non_taxed_price: "700",
+	name: "焦がしバター香るフィナンシェ",
+	explanation: "北海道産バターを使用した風味豊かなフィナンシェ。 甘さ控えめで男性にも人気が高い一品です。",
+	non_taxed_price: "250",
+	genre_id: 3,
+	is_active: true,
+	image: open("./app/assets/images/yakigashi2.jpg")
+)
+Item.create!(
+	name: "絞り出しクッキー",
+	explanation: "クッキー生地にアーモンドプールを混ぜて、香ばしく仕上げました。 甘さ控えめのジャムがより風味を引き立てます。 お茶のお供にどうぞ。",
+	non_taxed_price: "180",
+	genre_id: 3,
+	is_active: true,
+	image: open("./app/assets/images/yakigashi3.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
 	genre_id: 4,
 	is_active: true,
-	image: open("./app/assets/images/purinn.jpg")
+	image: open("./app/assets/images/candy1.jpg")
 )
 Item.create!(
-	name: "樹海羊羹",
-	explanation: "まさに芸術",
-	non_taxed_price: "10000",
-	genre_id: 5,
-	is_active: false,
-	image: open("./app/assets/images/wagashi.jpg")
-)
-Item.create!(
-	name: "みんな大好きミッキーアイス",
-	explanation: "これでみんなも夢の国への入り口！",
-	non_taxed_price: "600",
-	genre_id: 6,
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 4,
 	is_active: true,
-	image: open("./app/assets/images/aisu.jpg")
-	
+	image: open("./app/assets/images/candy2.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 4,
+	is_active: true,
+	image: open("./app/assets/images/candy3.jpg")
+)
+Item.create!(
+	name: "test",
+	explanation: "test",
+	non_taxed_price: "test",
+	genre_id: 5,
+	is_active: true,
+	image: open("./app/assets/images/wagashi.jpg")
 )
 
 9.times do |n|
 Shipping.create!(
-	name: "test#{n + 1}",
-	postcode: "3576678#{n + 1}",
-	address: "東京都品川区東五反田  朝日川マンション4階#{n + 1}",
+	name: "DMM WEBCAMP 渋谷校",
+	postcode: "1500041",
+	address: "東京都渋谷区神南1-19-11",
 	public_id: n + 1
 )
 end
@@ -115,8 +198,8 @@ end
 5.times do |n|
 Order.create!(
 	public_id: n + 1,
-	address: "東京都品川区東五反田  朝日川マンション4階#{n + 1}",
-	postcode: "123456#{n + 1}",
+	address: "東京都渋谷区神南1-19-11",
+	postcode: "1500041",
 	name: "test#{n + 1}",
 	postage: "800",
 	amount: "#{1000 + (n * 1000) +800}",
