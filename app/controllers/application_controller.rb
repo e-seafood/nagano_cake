@@ -1,25 +1,24 @@
 class ApplicationController < ActionController::Base
-  
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   before_action :configure_account_update_params, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-		case resource
-			when Admin
-			admins_root_path
-			when Public
-			root_path
-		end
+    case resource
+    when Admin
+      admins_root_path
+    when Public
+      root_path
+    end
   end
 
   def after_sign_out_path_for(resource)
     case resource
     when :admin
-    new_admin_session_path
+      new_admin_session_path
     when :public
-    root_path
-  end
+      root_path
+    end
   end
 
   protected
@@ -32,5 +31,4 @@ class ApplicationController < ActionController::Base
 
   def configure_account_update_params
   end
-
 end

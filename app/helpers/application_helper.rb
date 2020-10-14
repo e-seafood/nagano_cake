@@ -1,9 +1,10 @@
 module ApplicationHelper
-#消費税の計算
+  # 消費税の計算
   def tax(price)
-    ((price*1.1).round(2)).ceil
+    (price * 1.1).round(2).ceil
   end
-#送料
+
+  # 送料
   def post_age
     800.to_i
   end
@@ -17,7 +18,7 @@ module ApplicationHelper
     carts.each do |cart|
       price += sub_total(cart)
     end
-    return price
+    price
   end
 
   def amount(carts)
@@ -29,7 +30,6 @@ module ApplicationHelper
     items.each do |item|
       items_count += item.item_count
     end
-    return items_count
+    items_count
   end
-
 end
