@@ -7,7 +7,14 @@ before_action :authenticate_admin!
 	end
 
 	def index
-		@orders = Order.all.page(params[:page])
+		if params[:type] == 'public'
+			@public = Public.find(params[:id])
+			@orders = @public.orders.page(params[:page])
+		elsif params[:type] == 'today'
+			@orders = Order.where("created_at >= ?", Date.today).page(params[:page])
+		else
+			@orders = Order.all.page(params[:page])
+		end
 	end
 
 	def show

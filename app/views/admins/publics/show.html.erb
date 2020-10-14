@@ -46,6 +46,6 @@
 </table>
 
 <span class="link-hover"><%= link_to "編集する", edit_admins_public_path(@public), class: "btn btn-primary" %></span>
-<span class="link-hover"><%= link_to "注文履歴一覧を見る",admins_orders_path(@public), class: "btn btn-primary"  %></span>
+<span class="link-hover"><%= link_to "注文履歴一覧を見る", admins_orders_path(id: @public.id, type: 'public'), class: "btn btn-primary"  %></span>
 </div>
 </div>

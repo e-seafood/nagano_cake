@@ -6,7 +6,8 @@ def index
     @genre = Genre.find(params[:id])
     @items = @genre.items.where(is_active: true).page(params[:page]).per(8)
   else
-    @items = Item.where(is_active: true).page(params[:page]).per(8)
+    @items = Item.joins(:genre).where(genres: {is_active: "有効"})
+    .page(params[:page]).per(8)
   end
 end
 

@@ -16,13 +16,13 @@ before_action :authenticate_admin!
 
 	def update
 		@public = Public.find(params[:id])
-		if  @public.update(public_params)
+		if @public.update(public_params)
 			redirect_to admins_public_path(@public)
 		else
-			render "edit"
-			flash[:notice] = "編集内容を登録できませんでした"
+			render :edit
 		end
 	end
+
 private
 	def public_params
 		params.require(:public).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :email, :address, :tel, :is_deleted)
