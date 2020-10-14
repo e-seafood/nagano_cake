@@ -1,7 +1,8 @@
 class Publics::CartsController < ApplicationController
+  before_action :authenticate_public!
 
   def index
-    @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+    @carts = Cart.where(public_id: current_public.id).order(:item_id)
   end
 
   def create
@@ -12,14 +13,19 @@ class Publics::CartsController < ApplicationController
     else
       @cart.item_count += params[:cart][:item_count].to_i
     end
-    @cart.save
-    redirect_to carts_path
+    if @cart.save
+      redirect_to carts_path
+    else
+      flash.now[:alert] = 'カートに追加できませんでした。個数を選択してください。'
+      @carts = Cart.where(public_id: current_public.id).order(item_id: "ASC")
+      render :index
+    end
   end
 
   def update
     @cart = Cart.find_by(id: params[:id])
+    @carts = Cart.where(public_id: current_public.id).order(:item_id)
     @cart.update(cart_params)
-    redirect_to carts_path
   end
 
   def destroy
@@ -34,8 +40,8 @@ class Publics::CartsController < ApplicationController
   end
 
   private
+
   def cart_params
     params.require(:cart).permit(:public_id, :item_id, :item_count)
   end
-
 end

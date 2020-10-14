@@ -1,3 +1,34 @@
 // Place all the styles related to the publics/carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart-all {
+  padding-top: 30px;
+}
+
+.cart-all a {
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+.td_vertical_align_middle.td_vertical_align_middle {
+  vertical-align: middle;
+}
+.cart-list{
+	display: flex;
+	margin-bottom: 5px;
+}
+.cart-item{
+	width: 180px;
+}
+
+span > select{
+	width: 500px;
+	margin-left: 50px;
+}
+.cart-btn{
+	margin-top: 20px;
+}

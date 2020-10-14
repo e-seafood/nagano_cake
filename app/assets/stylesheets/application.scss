@@ -16,27 +16,141 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container{
-	position: relative;
-	border: 1px solid;
-	min-height: 700px;
+body {
+	font-family: 'Noto Serif JP', serif;
 }
-.navbar{
-	border-bottom: 1px solid;
+
+.main {
+	min-height: 580px;
 }
-.publis_name{
+
+.row {
+	width: 100%;
+	margin: 0 auto;
+}
+.publis_name {
 	padding: 15px;
 }
-#table-borderless > thead > tr > th,
-#table-borderless > tbody > tr > td {
+.page-sub-title{
+	margin-botton: 20px;
+	width: 50%;
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: 900;
+}
+#table-borderless>thead>tr>th,
+#table-borderless>tbody>tr>td,
+#table-borderless>tbody>tr>th {
 	border: none;
 	padding: 5px;
 }
-.footer{
-	position: absolute;
-    bottom: 0;
-    right:0;
-    min-height: 50px;
-    width: 100%;
-	border-top: 1px solid;
+
+.table-strong>tbody>tr>td,
+.table-strong>tbody>tr>th {
+	font-size: 16px;
+}
+
+.text_rigth {
+	text-align: right;
+}
+
+.flax-main {
+	display: flex;
+	align-content: flex-end;
+}
+
+.flex-bottom {
+	display: flex;
+	align-items: flex-end;
+}
+
+.form-control {
+	width: auto;
+	display: inline-block;
+}
+
+.top-image {
+	height: 380px;
+	background-image: url(flower.jpg);
+	background-size: cover;
+	padding: 0;
+	position: relative;
+}
+.top-text {
+	background-color: rgba(0,0,0, 0.5);
+    padding: 30px;
+    color: #ddd;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+}
+
+.top-text p {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 2;
+}
+
+.pick-up-box {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+.pick-up {
+	padding: 0;
+}
+
+.pick-up-title {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.pick-up p {
+	margin-top: 5px;
+}
+
+.navbar {
+	margin: 0;
+}
+
+.pick-up-item {
+	padding: 0;
+}
+
+a {
+	color: black;
+}
+
+.genre-search {
+	margin-right: 20px;
+	margin-top: 50px;
+}
+
+.container {
+	width: 1300px;
+	padding: 0;
+}
+
+.session1 {
+	margin-top: 150px;
+}
+
+.login1 {
+	margin-bottom: 50px;
+}
+
+.sign-up {
+	margin-top: 80px;
+}
+
+.sign-up1 {
+	margin-bottom: 50px;
+}
+
+.passedit {
+	margin-bottom: 50px;
+}
+
+.adminlog {
+	margin-bottom: 50px;
 }

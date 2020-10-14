@@ -6,32 +6,43 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
+    </style>
   </head>
 
   <body>
-    <div class="container">
-    <haeder class="navbar">
-        <nav class="nav navbar-nav navbar-left">
-          <span>ながのCake</span>
-        </nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if public_signed_in? %>
-              <%= render "layouts/header_login" %>
+    <div class="container header">
+      <div class="row">
+        <header class="navbar">
+          <nav class="nav navbar-nav navbar-left">
+            <%= link_to root_path do %>
+              <%= image_tag "logo.jpg", :size =>'180x70' %>
+            <% end %>
+          </nav>
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <% if public_signed_in? %>
+                <%= render "layouts/header_login" %>
+              <% else %>
                 <% if admin_signed_in? %>
                   <%= render "layouts/header_admin" %>
+                <% else %>
+                  <%= render "layouts/header_no_login" %>
                 <% end %>
-            <% else %>
-              <%= render "layouts/header_no_login" %>
-            <% end %>
-
-          </ul>
-        </nav>
-    </haeder>
+              <% end %>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="container main">
       <%= yield %>
-      <footer class="footer"></footer>
+    </div>
+    </div>
+    <div class="container">
+      <footer class="row footer"></footer>
     </div>
   </body>
 </html>
-

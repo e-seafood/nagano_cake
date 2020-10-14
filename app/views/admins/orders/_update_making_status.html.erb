@@ -1,0 +1,17 @@
+<% order.order_items.each do |order_item| %>
+  <tr>
+    <td><%= order_item.item.name %></td>
+    <td><%= tax(order_item.item.non_taxed_price).to_s(:delimited) %></td>
+    <td><%= order_item.item_count %></td>
+    <td><%= sub_total(order_item).to_s(:delimited) %></td>
+    <td>
+      <%= form_with(model:order_item, url:admins_order_item_path(order_item)) do |f| %>
+
+        <%= f.select :making_status, OrderItem.making_statuses.keys,{}, class:"form-control select_making_status" %>
+
+        <span class="link-hover"><%= f.submit "更新" ,class:"btn btn-primary making-status-btn",data:{turbolinks:false} %></span>
+
+      <% end %>
+    </td>
+  </tr>
+<% end %>

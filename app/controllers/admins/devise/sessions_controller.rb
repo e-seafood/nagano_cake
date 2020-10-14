@@ -2,7 +2,8 @@
 
 class Admins::Devise::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  puts "#{ENV['admin_email']}"
+  puts "#{ENV['admin_password']}"
   # GET /resource/sign_in
   # def new
   #   super

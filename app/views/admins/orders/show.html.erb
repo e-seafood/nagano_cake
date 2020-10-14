@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-xs-5 col-xs-offset-1">
+    <h1 class="page-title">注文履歴詳細</h1>
+  </div>
+</div>
+<div class="row" >
+  <div class="col-xs-7 col-xs-offset-1">
+	  <table class="table table-borderless table-strong" >
+      <tbody>
+  	  	<tr>
+  	  	  <th>購入者</th>
+  	  	  <td>
+            <%= link_to admins_public_path(@order.public) do %>
+              <%= @order.public.last_name %> <%= @order.public.first_name %>
+            <% end %>
+          </td>
+  	  	</tr>
+  	  	<tr>
+  	  	  <th>配送先</th>
+  	  	  <td>〒<%= @order.postcode %>　<%= @order.address %><br><%= @order.name %></td>
+  	  	</tr>
+  	  	<tr>
+  	  	  <th>支払方法</th>
+  	  	  <td><%= @order.payment %></td>
+  	  	</tr>
+  	  		<th>注文ステータス</th>
+  	  		<td id="status">
+            <%= render"admins/orders/update_status",order:@order %>
+          </td>
+  	  	</tr>
+      </tbody>
+	  </table>
+  </div>
+</div>
+<div class="row flax-main">
+  <div class="col-xs-9  col-xs-offset-1">
+  <table class="table table-borderless">
+  	<thead>
+  	  <tr class="active">
+  	  	<th >商品名</th>
+  	  	<th>単価（税込）</th>
+  	  	<th>数量</th>
+  	  	<th>小計</th>
+  	  	<th>製作ステータス</th>
+  	  	<th colspan="2"></th>
+  	  </tr>
+  	</thead>
+  	<tbody class="making_status">
+  	  <%= render"admins/orders/update_making_status",order: @order  %>
+  	</tbody>
+  </table>
+  </div>
+  <div class="col-xs-3 flex-bottom">
+    <table class="table table-borderless table-strong">
+      <tbody>
+        <tr>
+          <th>商品合計</th>
+          <td class="text_rigth"><%= items_total(@order.order_items).to_s(:delimited) %>円</td>
+        </tr>
+         <tr>
+          <th>送料</th>
+          <td class="text_rigth"><%= post_age.to_s(:delimited) %>円</td>
+        </tr>
+         <tr>
+          <th>請求金額合計</th>
+          <th class="text_rigth"><%= amount(@order.order_items).to_s(:delimited) %>円</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

@@ -1,17 +1,36 @@
-<h2>配送先編集</h2>
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-8">
+    <h2 class="page-title">配送先編集</h2>
 
-<%= form_for(@shipping) do |f| %>
+    <% if @shipping.errors.any? %>
+    <div>
+      <h4><%= @shipping.errors.count %>件のエラーが発生しました。</h4>
+      <ul>
+        <% @shipping.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
 
-	<h4>郵便番号</h4>
-	<%= f.text_field :postcode %>
+    <%= form_for(@shipping) do |f| %>
 
-	<h4>住所</h4>
-	<%= f.text_field :address %>
+    <div>
+      <span class="edit-shipping-title"><%= f.label :postcode, "郵便番号(ハイフンなし)" %></span>
+      <span class="edit-shipping"><%= f.text_field :postcode %></span>
+    </div>
 
-	<h4>宛名</h4>
-	<%= f.text_field :name %>
+    <div>
+      <span class="edit-shipping-title"><%= f.label :address, "住所" %></span>
+      <span class="edit-shipping-item"><%= f.text_field :address, :size => 60 %></span>
+    </div>
 
-	<%= f.submit '編集' %>
-<% end %>
+    <div>
+      <span class="edit-shipping-title"><%= f.label :name, "宛名" %></span>
+      <span class="edit-shipping-item"><%= f.text_field :name %></span>
+      <span class="edit-shipping-box"><%= f.submit '編集する',class:"btn btn-primary" %></span>
+    </div>
 
-
+    <% end %>
+  </div>
+</div>
