@@ -32,6 +32,7 @@ ja:
         item_count: 数量
       genre:
         name: ジャンル名
+
   errors:
     format: "%{attribute}%{message}"
     messages:
