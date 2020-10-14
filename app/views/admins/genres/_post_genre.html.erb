@@ -1,17 +1,8 @@
-<%= form_for(genre, url: path) do |f| %>
-  <% if genre.errors.any? %>
-    <div>
-      <h2><%= genre.errors.count %>件のエラーが発生しました。</h2>
-      <ul>
-      <% genre.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with(model:genre, url: path) do |f| %>
+
   <div class="box-top">
-    <%= f.label :genre, "ジャンル" %>
-      <%= f.text_field :name %>
+    <%= f.label :genre, "ジャンル"%>
+      <%= f.text_field :name, class:"genre_new"  %>
       <%= f.radio_button :is_active, :true,{:checked => true} %>
       <%= f.label :true,"有効" %>
       <%= f.radio_button :is_active, :false %>

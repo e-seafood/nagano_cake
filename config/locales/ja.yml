@@ -1,11 +1,11 @@
 ja:
   activerecord:
     models:
-      public: 
+      public:
       shipping:
-      item: 
+      item:
     attributes:
-      public: 
+      public:
         mail: メールアドレス
         password: パスワード
         last_name: 姓
@@ -15,7 +15,7 @@ ja:
         postcode: 郵便番号
         address: 住所
         tel: 電話番号
-        password_confirmation: 確認モード
+        password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
       shipping:
         name: 宛名
@@ -28,6 +28,10 @@ ja:
         genre: ジャンル
         non_taxed_price: 税抜価格
         is_active: 販売ステータス
+      cart:
+        item_count: 数量
+      genre:
+        name: ジャンル名
   errors:
     format: "%{attribute}%{message}"
     messages:
