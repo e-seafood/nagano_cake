@@ -1,5 +1,4 @@
 class Admins::SearchController < ApplicationController
-
   before_action :authenticate_admin!
 
   def search
@@ -8,8 +7,8 @@ class Admins::SearchController < ApplicationController
   end
 
   private
-  def search_for(content)
-    Item.where('name LIKE ?', '%'+content+'%')
-  end
 
+  def search_for(content)
+    Item.where('name LIKE ?', '%' + content + '%')
+  end
 end
