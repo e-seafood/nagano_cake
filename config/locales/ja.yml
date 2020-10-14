@@ -1,11 +1,11 @@
 ja:
   activerecord:
     models:
-      public: 
+      public:
       shipping:
-      item: 
+      item:
     attributes:
-      public: 
+      public:
         mail: メールアドレス
         password: パスワード
         last_name: 姓
