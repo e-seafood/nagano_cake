@@ -106,49 +106,49 @@ Item.create!(
 	image: open("./app/assets/images/cake8.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "特産地鶏のなめらかプリン",
+	explanation: "県内で採れた特産地鶏の卵をふんだんに使用した、口あたりの柔らかいプリンです。 ほろ苦いカラメルと合わせてお召し上がりください。",
+	non_taxed_price: "380",
 	genre_id: 2,
 	is_active: true,
 	image: open("./app/assets/images/purinn1.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "ビターショコラのムース",
+	explanation: "ほろ苦いムースに香ばしいアーモンドをトッピングした大人向けの商品。 甘酸っぱいベリーと、さっぱりとしたオレンジで味の変化をお楽しみください。",
+	non_taxed_price: "450",
 	genre_id: 2,
 	is_active: true,
 	image: open("./app/assets/images/purinn2.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "口溶けやわらか二層のムース",
+	explanation: "二層に分かれたビターショコラとミルクのムースに、ブルーベリーとラズベリーをたっぷりトッピングした一品。",
+	non_taxed_price: "400",
 	genre_id: 2,
 	is_active: true,
 	image: open("./app/assets/images/purinn3.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "北海道産バターのマドレーヌ",
+	explanation: "北海道産の上質なバターをたっぷり使って、しっとりとした食感に仕上げました。",
+	non_taxed_price: "250",
 	genre_id: 3,
 	is_active: true,
 	image: open("./app/assets/images/yakigashi1.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "焦がしバター香るフィナンシェ",
+	explanation: "北海道産バターを使用した風味豊かなフィナンシェ。 甘さ控えめで男性にも人気が高い一品です。",
+	non_taxed_price: "250",
 	genre_id: 3,
 	is_active: true,
 	image: open("./app/assets/images/yakigashi2.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "絞り出しクッキー",
+	explanation: "クッキー生地にアーモンドプールを混ぜて、香ばしく仕上げました。 甘さ控えめのジャムがより風味を引き立てます。 お茶のお供にどうぞ。",
+	non_taxed_price: "180",
 	genre_id: 3,
 	is_active: true,
 	image: open("./app/assets/images/yakigashi3.jpg")
