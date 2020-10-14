@@ -42,65 +42,65 @@ Genre.create!(
 )
 
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "かぼちゃクリームのシューケーキ",
+	explanation: "北海道産かぼちゃ「くりゆたか」を使用したクリームたっぷりのケーキです。",
+	non_taxed_price: "420",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake1.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "かぼちゃのキャラメルケーキ",
+	explanation: "北海道産かぼちゃ「くりゆたか」を使用。甘さ控えめのキャラメールソースをあしらっています。",
+	non_taxed_price: "370",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake2.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "栗とクルミのケーキ",
+	explanation: "栗をふんだんに使用したケーキです。クルミがアクセントになっています。",
+	non_taxed_price: "390",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake3.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "モンブラン",
+	explanation: "創業当時から変わらない味で、ご好評いただいております。",
+	non_taxed_price: "320",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake4.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "いちごとビターショコラのケーキ",
+	explanation: "栃木県産「とちおとめ」を使用。チョコレートはビターに仕上げています。",
+	non_taxed_price: "410",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake5.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "ティラミス風アイスケーキ",
+	explanation: "ティラミス風のアイスケーキです。レンジで少し温めていただくと美味しくお召し上がりいただけます。",
+	non_taxed_price: "290",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake6.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "杏子とクリームチーズのケーキ",
+	explanation: "程よい酸味でさっぱりお召し上がりいただけます。ドイツ風クワルクチーズケーキような軽い口当たりです。",
+	non_taxed_price: "450",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake7.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "クッキーサンドケーキ",
+	explanation: "ホイップクリームにクッキーをサンドしたケーキです。スティックチョコレートの飾り付けをしています。",
+	non_taxed_price: "330",
 	genre_id: 1,
 	is_active: true,
 	image: open("./app/assets/images/cake8.jpg")
@@ -154,33 +154,33 @@ Item.create!(
 	image: open("./app/assets/images/yakigashi3.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "フルーツキャンディ",
+	explanation: "色とりどりのフルーツキャンディです。※個別包装は要相談",
+	non_taxed_price: "300",
 	genre_id: 4,
 	is_active: true,
 	image: open("./app/assets/images/candy1.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "クリスマスキャンディ",
+	explanation: "クリスマスカラーのキャンディです。クリスマスシーズン以外もお買い求めいただけます。",
+	non_taxed_price: "220",
 	genre_id: 4,
 	is_active: true,
 	image: open("./app/assets/images/candy2.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "琥珀糖",
+	explanation: "シンプルな味わいの食べる宝石です。",
+	non_taxed_price: "180",
 	genre_id: 4,
 	is_active: true,
 	image: open("./app/assets/images/candy3.jpg")
 )
 Item.create!(
-	name: "test",
-	explanation: "test",
-	non_taxed_price: "test",
+	name: "水羊羹",
+	explanation: "色めっちゃ抜いた牡丹が中に入っています。後ろの猫は娘が幼稚園で作ったものです。",
+	non_taxed_price: "270",
 	genre_id: 5,
 	is_active: true,
 	image: open("./app/assets/images/wagashi.jpg")
