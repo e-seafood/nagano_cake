@@ -22,13 +22,10 @@ class Publics::OrdersController < ApplicationController
       @order.address = current_public.address
       @order.name = current_public.last_name + current_public.first_name
     elsif params[:select_address] == "登録済住所から選択"
-      if @shipping =  Shipping.find(params[:id])
-        @order.postcode = @shipping.postcode
-        @order.address = @shipping.address
-        @order.name = @shipping.name
-      else
-        flash[:alert] = 'お届け先を入力してください'
-      end
+      @shipping =  Shipping.find(params[:id])
+      @order.postcode = @shipping.postcode
+      @order.address = @shipping.address
+      @order.name = @shipping.name
     else
       @shipping = Shipping.new
       @shipping.public_id = current_public.id
