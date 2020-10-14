@@ -22,6 +22,7 @@ before_action :authenticate_admin!
 			render :edit
 		end
 	end
+
 private
 	def public_params
 		params.require(:public).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :email, :address, :tel, :is_deleted)

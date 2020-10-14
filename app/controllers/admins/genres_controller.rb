@@ -9,10 +9,9 @@ before_action :authenticate_admin!
 
 	def create
 		@genre = Genre.new(genre_params)
+		@genres = Genre.all.page(params[:page])
 		if 	@genre.save
-			redirect_to request.referer
 		else
-			@genres = Genre.all.page(params[:page])
 			render "index"
 		end
 	end
