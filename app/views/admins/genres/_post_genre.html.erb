@@ -1,14 +1,5 @@
 <%= form_with(model:genre, url: path) do |f| %>
-  <% if genre.errors.any? %>
-    <div>
-      <h4><%= genre.errors.count %>件のエラーが発生しました。</h4>
-      <ul>
-      <% genre.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+
   <div class="box-top">
     <%= f.label :genre, "ジャンル"%>
       <%= f.text_field :name, class:"genre_new"  %>
