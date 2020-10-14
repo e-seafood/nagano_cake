@@ -10,10 +10,7 @@ before_action :authenticate_admin!
 	def create
 		@genre = Genre.new(genre_params)
 		@genres = Genre.all.page(params[:page])
-		if 	@genre.save
-		else
-			render "index"
-		end
+		@genre.save
 	end
 
 	def edit
