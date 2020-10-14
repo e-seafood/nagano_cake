@@ -18,7 +18,7 @@ module ApplicationHelper
     carts.each do |cart|
       price += sub_total(cart)
     end
-    price
+    return price
   end
 
   def amount(carts)
@@ -30,6 +30,6 @@ module ApplicationHelper
     items.each do |item|
       items_count += item.item_count
     end
-    items_count
+    return items_count
   end
 end

@@ -6,7 +6,8 @@ class Admins::ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.page(params[:page])
+    @items = Item.joins(:genre).where(genres: { is_active: "有効" }).
+    page(params[:page])
   end
 
   def create

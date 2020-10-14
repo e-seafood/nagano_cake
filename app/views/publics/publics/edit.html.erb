@@ -3,6 +3,16 @@
     　　<h2 class="page-title">登録情報編集</h2>
     　 <%= form_with(model:current_public, url:update_publics_path, local: true ,method: :patch) do |f| %>
 
+    <% if @public.errors.any? %>
+    <div>
+      <h4><%= @public.errors.count %>件のエラーが発生しました。</h4>
+      <ul>
+        <% @public.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
     <div class="row">
       <div class="col-xs-10 edit-list">
         <span class="edit-list-title"><%= f.label :"名前" %></span>

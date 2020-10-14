@@ -2,7 +2,7 @@ class Shipping < ApplicationRecord
   belongs_to :public
 
   def shipping_all
-    postcode + address + name
+    self.postcode + self.address + self.name
   end
 
   validates :postcode,
